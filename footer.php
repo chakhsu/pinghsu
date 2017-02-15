@@ -312,18 +312,16 @@ InstantClick.on('change', function(isInitialLoad){
         hljs.highlightBlock(blocks[i]);
     }
     <?php endif; ?>
-    <?php if($this->options->GoogleAnalytics): ?>
-
-    ga('send', 'pageview', location.pathname + location.search);
-    <?php endif; ?>
-    <?php if ($this->options->useMathjax == 'able'): ?>
 
     if (isInitialLoad === false) {
-        if (typeof MathJax !== 'undefined'){
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-        }
-    }
+    <?php if($this->options->GoogleAnalytics): ?>
+        if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
     <?php endif; ?>
+    <?php if ($this->options->useMathjax == 'able'): ?>
+        if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
+    <?php endif; ?>
+
+    }
 
 });
 InstantClick.init();
