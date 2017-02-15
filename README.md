@@ -6,7 +6,11 @@ Pinghsu是一款以前端性能优化为出发点而制作的Typecho主题，同
 
 下载地址：
 
-主题预览为本站 ：https://www.linpx.com
+https://github.com/chakhsu/pinghsu
+
+主题预览：
+
+https://www.linpx.com
 
 图片预览：
 
