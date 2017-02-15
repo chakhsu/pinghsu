@@ -26,7 +26,6 @@
 				<div class="meta-copyright-info">
 					<a href="<?php $this->options->siteUrl(); ?>" class="info-logo"><img src="<?php if($this->options->footerLogoUrl): $this->options->footerLogoUrl(); else: $this->options->themeUrl('images/logo-hsuping.png');endif; ?>" alt="<?php $this->options->title() ?>" /></a>
 					<div class="info-text">
-                        <p>Better late than never.</p>
                     	<p>Theme is Pinghsu by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
 						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
 						<p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
@@ -315,10 +314,10 @@ InstantClick.on('change', function(isInitialLoad){
 
     if (isInitialLoad === false) {
     <?php if($this->options->GoogleAnalytics): ?>
-        if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
+    if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
     <?php endif; ?>
     <?php if ($this->options->useMathjax == 'able'): ?>
-        if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
+    if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
     <?php endif; ?>
 
     }
