@@ -325,6 +325,5 @@ InstantClick.on('change', function(isInitialLoad){
 InstantClick.init();
 </script>
 <?php endif; ?>
-
 </body>
 </html>
