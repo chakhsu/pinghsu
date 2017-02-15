@@ -299,8 +299,8 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
 <script data-no-instant>
-InstantClick.on('change', function(isInitialLoad){
 <?php if($this->options->GoogleAnalytics): $this->options->GoogleAnalytics(); endif; ?>
+InstantClick.on('change', function(isInitialLoad){
     <?php if ($this->options->useHighline == 'able'): ?>
 
     var blocks = document.querySelectorAll('pre code');
