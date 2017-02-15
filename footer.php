@@ -297,8 +297,8 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
 <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <?php endif; ?>
-<script data-no-instant>
 <?php if ($this->options->pjaxSet == 'able'): ?>
+<script data-no-instant>
 InstantClick.on('change', function(isInitialLoad){
 <?php if($this->options->GoogleAnalytics): $this->options->GoogleAnalytics(); endif; ?>
     <?php if ($this->options->useHighline == 'able'): ?>
@@ -323,8 +323,8 @@ InstantClick.on('change', function(isInitialLoad){
 
 });
 InstantClick.init();
-<?php endif; ?>
 </script>
+<?php endif; ?>
 
 </body>
 </html>
