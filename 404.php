@@ -95,7 +95,7 @@
             text-align: center;
             height: 36px;
             padding: 0 25px;
-            border-radius: 16px;
+            border-radius: 25px;
             -webkit-transition-duration: 400ms;
             transition-duration: 400ms;
             background-color: #fff;
