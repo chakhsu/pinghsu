@@ -2,26 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="<?php $this->options->charset(); ?>">
-    <?php if ($this->options->DnsPrefetch): ?>
-
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <?php if ($this->options->cdn_add): ?>
-
-    <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" />
-    <?php endif; ?>
-
+    <meta charset="<?php $this->options->charset(); ?>"><?php if ($this->options->DnsPrefetch): ?>
+    <meta http-equiv="x-dns-prefetch-control" content="on"><?php if ($this->options->cdn_add): ?>
+    <link rel="dns-prefetch" href="<?php $this->options->cdn_add(); ?>" /><?php endif; ?>
     <link rel="dns-prefetch" href="//cdn.bootcss.com" />
-    <link rel="dns-prefetch" href="//secure.gravatar.com" />
-    <?php endif; ?>
-
+    <link rel="dns-prefetch" href="//secure.gravatar.com" /><?php endif; ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform"/>
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="shortcut icon" href="<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/favicon.png');endif; ?>">
-    <link rel="apple-touch-icon" href="<?php if($this->options->iosicon): $this->options->iosicon(); else: $this->options->themeUrl('images/apple-touch-icon.png');endif; ?>">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/><?php if($this->options->favicon): ?>
+    <link rel="shortcut icon" href="<?php $this->options->favicon(); ?>"><?php endif;?><?php if($this->options->iosicon): ?>
+    <link rel="apple-touch-icon" href="<?php $this->options->iosicon();?>"><?php endif; ?>
     <title><?php $this->archiveTitle(array(
     'category'  =>  _t(' %s '),
     'search'    =>  _t(' %s '),
@@ -47,7 +39,11 @@
 <header id="header" class="header bg-white">
     <div class="navbar-container">
         <a href="<?php $this->options->siteUrl(); ?>" class="navbar-logo">
-            <img src="<?php if($this->options->logoUrl): $this->options->logoUrl(); else: $this->options->themeUrl('images/logo.png');endif; ?>" alt="<?php $this->options->title() ?>" />
+            <?php if($this->options->logoUrl): ?>
+            <img src="<?php $this->options->logoUrl();?>" alt="<?php $this->options->title() ?>" />
+            <?php else : ?>
+            <?php $this->options->title() ?>
+            <?php endif; ?>
         </a>
         <div class="navbar-menu">
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>

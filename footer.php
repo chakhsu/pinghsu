@@ -24,7 +24,13 @@
 		<div class="footer-container">
 			<div class="meta-item meta-copyright">
 				<div class="meta-copyright-info">
-					<a href="<?php $this->options->siteUrl(); ?>" class="info-logo"><img src="<?php if($this->options->footerLogoUrl): $this->options->footerLogoUrl(); else: $this->options->themeUrl('images/logo-hsuping.png');endif; ?>" alt="<?php $this->options->title() ?>" /></a>
+					<a href="<?php $this->options->siteUrl(); ?>" class="info-logo">
+                        <?php if($this->options->footerLogoUrl): ?>
+                        <img src="<?php $this->options->footerLogoUrl();?>" alt="<?php $this->options->title() ?>" />
+                        <?php else : ?>
+                        <?php $this->options->title() ?>
+                        <?php endif; ?>
+                    </a>
 					<div class="info-text">
                     	<p>Theme is Pinghsu by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
 						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
