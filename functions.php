@@ -66,22 +66,22 @@ function themeConfig($form) {
     $form->addInput($GoogleAnalytics);
 
 
-	$socialweibo = new Typecho_Widget_Helper_Form_Element_Text('socialweibo', NULL, NULL, _t('输入微博链接'), _t('在这里输入微博链接,支持 http:// 或 https:// 或 //'));
-	$form->addInput($socialweibo->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $socialweibo = new Typecho_Widget_Helper_Form_Element_Text('socialweibo', NULL, NULL, _t('输入微博链接'), _t('在这里输入微博链接,支持 http:// 或 https:// 或 //'));
+    $form->addInput($socialweibo->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
     $socialzhihu = new Typecho_Widget_Helper_Form_Element_Text('socialzhihu', NULL, NULL, _t('输入知乎链接'), _t('在这里输入知乎链接,支持 http:// 或 https:// 或 //'));
     $form->addInput($socialzhihu->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-	$socialgithub = new Typecho_Widget_Helper_Form_Element_Text('socialgithub', NULL, NULL, _t('输入GitHub链接'), _t('在这里输入GitHub链接,支持 http:// 或 https://或 //'));
-	$form->addInput($socialgithub->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-	$socialtwitter = new Typecho_Widget_Helper_Form_Element_Text('socialtwitter', NULL, NULL, _t('输入Twitter链接'), _t('在这里输入twitter链接,支持 http:// 或 https:// 或 //'));
-	$form->addInput($socialtwitter->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $socialgithub = new Typecho_Widget_Helper_Form_Element_Text('socialgithub', NULL, NULL, _t('输入GitHub链接'), _t('在这里输入GitHub链接,支持 http:// 或 https://或 //'));
+    $form->addInput($socialgithub->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $socialtwitter = new Typecho_Widget_Helper_Form_Element_Text('socialtwitter', NULL, NULL, _t('输入Twitter链接'), _t('在这里输入twitter链接,支持 http:// 或 https:// 或 //'));
+    $form->addInput($socialtwitter->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
 
 
-	$srcAddress = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('图片CDN替换前地址'), _t('即你的附件存放链接，一般为http://www.yourblog.com/usr/uploads/'));
-	$form->addInput($srcAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-	$cdnAddress = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('图片CDN替换后地址'), _t('即你的七牛云存储域名，一般为http://yourblog.qiniudn.com/，可能也支持其他有镜像功能的CDN服务'));
-	$form->addInput($cdnAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
-	$default_thumb = new Typecho_Widget_Helper_Form_Element_Text('default_thumb', NULL, '', _t('默认缩略图'),_t('文章没有图片时的默认缩略图，留空则无，一般为http://www.yourblog.com/image.png'));
-	$form->addInput($default_thumb->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $srcAddress = new Typecho_Widget_Helper_Form_Element_Text('src_add', NULL, NULL, _t('图片CDN替换前地址'), _t('即你的附件存放链接，一般为http://www.yourblog.com/usr/uploads/'));
+    $form->addInput($srcAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $cdnAddress = new Typecho_Widget_Helper_Form_Element_Text('cdn_add', NULL, NULL, _t('图片CDN替换后地址'), _t('即你的七牛云存储域名，一般为http://yourblog.qiniudn.com/，可能也支持其他有镜像功能的CDN服务'));
+    $form->addInput($cdnAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $default_thumb = new Typecho_Widget_Helper_Form_Element_Text('default_thumb', NULL, '', _t('默认缩略图'),_t('文章没有图片时的默认缩略图，留空则无，一般为http://www.yourblog.com/image.png'));
+    $form->addInput($default_thumb->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
 }
 
 function showThumb($obj,$size=null,$link=false){
