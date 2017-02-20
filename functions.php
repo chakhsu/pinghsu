@@ -157,7 +157,3 @@ function getRecentPosts($obj,$pageSize){
     }
 }
 
-function getRandBgColor($obj){
-    $colors=array('bg-blue','bg-purple','bg-green','bg-yellow','bg-red');
-    return $colors[mt_rand(0,4)];
-}
