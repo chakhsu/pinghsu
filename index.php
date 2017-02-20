@@ -18,21 +18,19 @@ $this->need('header.php');
 		<?php while($this->next()): ?>
 			<div class="post-list-item">
 				<div class="post-list-item-container">
-					<?php if (array_key_exists('thumb',unserialize($this->___fields()))): ?>
-					<a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php echo $this->fields->thumb;?>);">
-						<dir class="item-desc">
-							<?php $this->excerpt(75, '...');?>
-						</dir>
-					</a>
-                    <?php else : ?>
-                    <?php $thumb = showThumb($this,null,true);?>
-                    <?php if(!empty($thumb)):?>
-                    <a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php echo $thumb;?>);">
-                    	<dir class="item-desc">
-							<?php $this->excerpt(75, '...');?>
-						</dir>
-                    </a>
-                    <?php endif; ?>
+					<?php if (isset($this->thumb) && ($this->thumb !== "unknown")) : ?>
+					<?php $thumb = $this->thumb; ?>
+					<?php elseif (array_key_exists('thumb',unserialize($this->___fields()))) : ?>
+					<?php $thumb = $this->fields->thumb; ?>
+					<?php else : ?>
+					<?php $thumb = showThumb($this,null,true); ?>
+					<?php endif; ?>
+					<?php if (!empty($thumb)) : ?>
+						<a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php echo($thumb); ?>);">
+							<dir class="item-desc">
+								<?php $this->excerpt(75, '...'); ?>
+							</dir>
+						</a>
 					<?php endif; ?>
 					<div class="item-slant reverse-slant <<?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>"></div>
 					<div class="item-slant"></div>
@@ -40,27 +38,31 @@ $this->need('header.php');
 						<div class="item-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></div>
 						<div class="item-meta clearfix">
 							<?php if (array_key_exists('book',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-book" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<?php $postType = 'book'; ?>
 							<?php elseif (array_key_exists('game',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-game" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'game'; ?>
 							<?php elseif (array_key_exists('note',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-note" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'note'; ?>
 							<?php elseif (array_key_exists('chat',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-chat" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'chat'; ?>
 							<?php elseif (array_key_exists('code',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-code" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'code'; ?>
 							<?php elseif (array_key_exists('image',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-image" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'image'; ?>
 							<?php elseif (array_key_exists('web',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-web" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'web'; ?>
 							<?php elseif (array_key_exists('link',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-link" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'link'; ?>
 							<?php elseif (array_key_exists('design',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-design" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'design'; ?>
 							<?php elseif (array_key_exists('lock',unserialize($this->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-lock" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<? $postType = 'lock'; ?>
 							<?php else : ?>
-                            <?php endif; ?>
+							<?php if ($this->template !== NULL) { $postType = $this->template; } ?>
+							<?php endif; ?>
+							<?php if (isset($postType)): ?>
+							<div class="item-meta-ico bg-ico-<?php _e($postType); ?>"></div>
+							<?php unset($postType); endif; ?>
 							<div class="item-meta-cat"><?php $this->category(''); ?></div>
 						</div>
 					</div>

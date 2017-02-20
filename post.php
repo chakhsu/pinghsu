@@ -16,6 +16,7 @@
         </p>
 		<?php $this->content(); ?>
 		<p class="post-info">
+<?php $this->trackback(); ?>
 			本文由 <a href="<?php $this->author->permalink(); ?>"><?php $this->author() ?></a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: <?php echo date('M j, Y \\a\t h:i a' , $this->modified); ?>
 		</p>
 	</div>
@@ -33,28 +34,32 @@
 					<div class="item-label">
 						<div class="item-title"><a href="<?php $relatedPosts->permalink() ?>"><?php $relatedPosts->title() ?></a></div>
 						<div class="item-meta clearfix">
-							<?php if (array_key_exists('book',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-book" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('game',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-game" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('note',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-note" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('chat',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-chat" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('code',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-code" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('image',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-image" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('web',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-web" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('link',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-link" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('design',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-design" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('lock',unserialize($relatedPosts->___fields()))): ?>
-							<div class="item-meta-ico bg-ico-lock" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
+							<?php if (array_key_exists('book',unserialize($this->___fields()))): ?>
+							<?php $postType = 'book'; ?>
+							<?php elseif (array_key_exists('game',unserialize($this->___fields()))): ?>
+							<? $postType = 'game'; ?>
+							<?php elseif (array_key_exists('note',unserialize($this->___fields()))): ?>
+							<? $postType = 'note'; ?>
+							<?php elseif (array_key_exists('chat',unserialize($this->___fields()))): ?>
+							<? $postType = 'chat'; ?>
+							<?php elseif (array_key_exists('code',unserialize($this->___fields()))): ?>
+							<? $postType = 'code'; ?>
+							<?php elseif (array_key_exists('image',unserialize($this->___fields()))): ?>
+							<? $postType = 'image'; ?>
+							<?php elseif (array_key_exists('web',unserialize($this->___fields()))): ?>
+							<? $postType = 'web'; ?>
+							<?php elseif (array_key_exists('link',unserialize($this->___fields()))): ?>
+							<? $postType = 'link'; ?>
+							<?php elseif (array_key_exists('design',unserialize($this->___fields()))): ?>
+							<? $postType = 'design'; ?>
+							<?php elseif (array_key_exists('lock',unserialize($this->___fields()))): ?>
+							<? $postType = 'lock'; ?>
 							<?php else : ?>
-	                        <?php endif; ?>
+							<?php if ($this->template !== NULL) { $postType = $this->template; } ?>
+							<?php endif; ?>
+							<?php if (isset($postType)): ?>
+							<div class="item-meta-ico bg-ico-<?php _e($postType); ?>"></div>
+							<?php unset($postType); endif; ?>
 							<div class="item-meta-cat"><?php $relatedPosts->category(''); ?></div>
 						</div>
 					</div>

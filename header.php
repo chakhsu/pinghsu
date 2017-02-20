@@ -48,10 +48,10 @@
         <div class="navbar-menu">
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
             <?php while($pages->next()): ?>
-
-            <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>
+            <?php if (array_key_exists('navbar',unserialize($pages->___fields()))): ?>
+                <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a>
+            <?php endif; ?>
             <?php endwhile; ?>
-
         </div>
         <div class="navbar-search" onclick="">
             <span class="icon-search"></span>
@@ -66,10 +66,10 @@
             <ul>
                 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                 <?php while($pages->next()): ?>
-
+                <?php if (array_key_exists('navbar',unserialize($pages->___fields()))): ?>
                 <li><a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>"><?php $pages->title(); ?></a></li>
+                <?php endif; ?>
                 <?php endwhile; ?>
-
             </ul>
         </div>
     </div>
