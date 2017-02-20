@@ -6,15 +6,13 @@ Pinghsu是一款以前端性能优化为出发点而制作的Typecho主题，同
 
 下载地址：
 
-https://github.com/chakhsu/pinghsu
 
-主题预览：
+主题预览为本站：
 
 https://www.linpx.com
 
 图片预览：
 
-![pinghsu-theme-preview.jpg][1]
 
 ##主题亮点
 
@@ -26,8 +24,7 @@ https://www.linpx.com
  - 支持文章个性化标徽设置，10种标徽选择
  - 支持文章目录、相关文章与数学公式渲染
  - 支持个人社交按钮，但无社交分享
- - 主题设置添加XSS检测，评论提交防止触发多次
- - 还有更多亮点等你去发现~
+ - 更多亮点等你去发现···
 
 ##主题使用
 
@@ -43,23 +40,23 @@ https://www.linpx.com
 
 使用注意事项都在设置里写得比较清楚了，如果遇到不明白的地方，可以评论留言给我
 
-#####logo、icon的设置
+####logo、icon的设置
 
-![logo设置.png][2]
+图
 
-#####功能开关
+####功能开关
 
-![功能开关.png][3]
+图
 
-#####社交按钮设置
+####社交按钮设置
 
-![社交按钮设置.png][4]
+图
 
-#####图片CDN镜像
+####图片CDN镜像
 
 肯定支持七牛CDN，理论上也支持有镜像服务的CDN
 
-![图片CDN镜像.png][5]
+图
 
 ###页面设置
 
@@ -67,15 +64,13 @@ https://www.linpx.com
 
 设置步骤有两步，创建页面，自定义模板选择，自定义字段`archive`，如下图所示
 
-![页面设置.png][6]
+图
 
 ###文章缩略图
 
-文章设置缩略图方法有四种，自定义字段`thumb`，文章附件第一张图片，文章内图片，默认缩略图
+文章设置缩略图方法有四种，自定义字段`thumb`，文章附近第一张图片，文章内图片，默认缩略图
 
 优先级顺序 ：自定义字段thumb -> 附件第一张图片 -> 文章图片 -> 默认缩略图 -> 无
-
-缩略图尺寸大小，高度至少有250px，宽度大于高度，推荐高度为400px的
 
 ###个性化标徽
 
@@ -85,18 +80,10 @@ https://www.linpx.com
 
 `book` 、 `game` 、 `note` 、 `chat` 、 `code` 、 `image` 、 `web` 、 `link` 、 `design` 、 `lock`
 
-##浏览器兼容情况
+###浏览器兼容情况
 
 这个····现代浏览器都兼容····
 
-##License
+###License
 
 Open sourced under the MIT license.
-
-
-  [1]: https://ws1.sinaimg.cn/large/7c98397dgy1fcsfm231j9j20rk0ipwhy
-  [2]: https://ws1.sinaimg.cn/large/7c98397dgy1fcsflqsec3j20m80bbmxe
-  [3]: https://ws1.sinaimg.cn/large/7c98397dgy1fcsflt4gc6j20m80lxq3t
-  [4]: https://ws1.sinaimg.cn/large/7c98397dgy1fcsflokwmsj20m80ba74d
-  [5]: https://ws1.sinaimg.cn/large/7c98397dgy1fcsflpdtuoj20m808dwem
-  [6]: https://ws1.sinaimg.cn/large/7c98397dgy1fcsflrkphkj20rs0i9dgb

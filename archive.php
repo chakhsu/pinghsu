@@ -17,10 +17,8 @@
 				<?php if ($this->have()): ?>
 				<?php while($this->next()): ?>
 				<div class="post-list-item">
-					<div class="post-list-item-container">
-						<div class="item-slant reverse-slant"></div>
-						<div class="item-slant"></div>
-						<div class="item-label">
+					<div class="post-list-item-container <?php if ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>">
+						<div class="item-label <?php if ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>">
 							<div class="item-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></div>
 							<div class="item-meta clearfix">
 								<?php if (array_key_exists('book',unserialize($this->___fields()))): ?>

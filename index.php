@@ -4,7 +4,7 @@
  *
  * @package Pinghsu Theme
  * @author Chakhsu Lau
- * @version 1.0.0
+ * @version 1.1.0
  * @link https://www.linpx.com/
  */
 
@@ -19,14 +19,22 @@ $this->need('header.php');
 			<div class="post-list-item">
 				<div class="post-list-item-container">
 					<?php if (array_key_exists('thumb',unserialize($this->___fields()))): ?>
-					<a href="<?php $this->permalink() ?>" class="item-thumb" style="background-image: url(<?php echo $this->fields->thumb;?>);"></a>
+					<a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php echo $this->fields->thumb;?>);">
+						<dir class="item-desc">
+							<?php $this->excerpt(75, '...');?>
+						</dir>
+					</a>
                     <?php else : ?>
                     <?php $thumb = showThumb($this,null,true);?>
                     <?php if(!empty($thumb)):?>
-                    <a href="<?php $this->permalink() ?>" class="item-thumb" style="background-image: url(<?php echo $thumb;?>);"></a>
+                    <a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php echo $thumb;?>);">
+                    	<dir class="item-desc">
+							<?php $this->excerpt(75, '...');?>
+						</dir>
+                    </a>
                     <?php endif; ?>
 					<?php endif; ?>
-					<div class="item-slant reverse-slant bg-white"></div>
+					<div class="item-slant reverse-slant <<?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>"></div>
 					<div class="item-slant"></div>
 					<div class="item-label">
 						<div class="item-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></div>

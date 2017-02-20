@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<footer class="footer <?php if (array_key_exists('archive',unserialize($this->___fields()))): ?>bg-white<?php elseif($this->is('archive')): ?>bg-white<?php elseif($this->is('single')): ?>bg-white<?php endif; ?>">
+<footer class="footer <?php if (array_key_exists('archive',unserialize($this->___fields()))): ?>bg-white<?php elseif($this->is('archive')&&($this->options->colorBgPosts == 'defaultColor')): ?>bg-white<?php elseif($this->is('archive')&&($this->options->colorBgPosts == 'customColor')): ?>bg-grey<?php elseif($this->is('single')): ?>bg-white<?php endif; ?>">
 	<div class="footer-social">
 		<div class="footer-container clearfix">
 			<div class="social-list">
@@ -24,7 +24,7 @@
 		<div class="footer-container">
 			<div class="meta-item meta-copyright">
 				<div class="meta-copyright-info">
-					<a href="<?php $this->options->siteUrl(); ?>" class="info-logo">
+                    <a href="<?php $this->options->siteUrl(); ?>" class="info-logo">
                         <?php if($this->options->footerLogoUrl): ?>
                         <img src="<?php $this->options->footerLogoUrl();?>" alt="<?php $this->options->title() ?>" />
                         <?php else : ?>
@@ -32,7 +32,8 @@
                         <?php endif; ?>
                     </a>
 					<div class="info-text">
-                    	<p>Theme is Pinghsu by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+                        <p>Better late than never.</p>
+                    	<p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="_blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
 						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
 						<p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
 					</div>
@@ -164,14 +165,12 @@ postDirectoryBuild();
             }
             return el;
         },
-
         reply : function (cid, coid) {
             var comment = this.dom(cid), parent = comment.parentNode,
                 response = this.dom('<?php echo $this->respondId(); ?>'),
                 input = this.dom('comment-parent'),
                 form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
                 textarea = response.getElementsByTagName('textarea')[0];
-
             if (null == input) {
                 input = this.create('input', {
                     'type' : 'hidden',
@@ -181,9 +180,7 @@ postDirectoryBuild();
 
                 form.appendChild(input);
             }
-
             input.setAttribute('value', coid);
-
             if (null == this.dom('comment-form-place-holder')) {
                 var holder = this.create('div', {
                     'id' : 'comment-form-place-holder'
@@ -191,30 +188,23 @@ postDirectoryBuild();
 
                 response.parentNode.insertBefore(holder, response);
             }
-
             comment.appendChild(response);
             this.dom('cancel-comment-reply-link').style.display = '';
-
             if (null != textarea && 'text' == textarea.name) {
                 textarea.focus();
             }
-
             return false;
         },
-
         cancelReply : function () {
             var response = this.dom('<?php echo $this->respondId(); ?>'),
             holder = this.dom('comment-form-place-holder'),
             input = this.dom('comment-parent');
-
             if (null != input) {
                 input.parentNode.removeChild(input);
             }
-
             if (null == holder) {
                 return true;
             }
-
             this.dom('cancel-comment-reply-link').style.display = 'none';
             holder.parentNode.insertBefore(response, holder);
             return false;
@@ -321,10 +311,10 @@ InstantClick.on('change', function(isInitialLoad){
 
     if (isInitialLoad === false) {
     <?php if($this->options->GoogleAnalytics): ?>
-    if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
+        if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
     <?php endif; ?>
     <?php if ($this->options->useMathjax == 'able'): ?>
-    if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
+        if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
     <?php endif; ?>
 
     }

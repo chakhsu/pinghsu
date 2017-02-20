@@ -2,15 +2,14 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
-
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('页头logo地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则使用站点名称'));
     $form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
     $footerLogoUrl = new Typecho_Widget_Helper_Form_Element_Text('footerLogoUrl', NULL, NULL, _t('页尾logo地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则使用站点名称'));
     $form->addInput($footerLogoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-	$favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('favicon地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则不设置favicon'));
-	$form->addInput($favicon->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-	$iosicon = new Typecho_Widget_Helper_Form_Element_Text('iosicon', NULL, NULL, _t('apple touch icon地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则不设置Apple Touch Icon'));
-	$form->addInput($iosicon->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('favicon地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则不设置favicon'));
+    $form->addInput($favicon->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+    $iosicon = new Typecho_Widget_Helper_Form_Element_Text('iosicon', NULL, NULL, _t('apple touch icon地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则不设置Apple Touch Icon'));
+    $form->addInput($iosicon->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
 
 
     $pjaxSet = new Typecho_Widget_Helper_Form_Element_Radio('pjaxSet',
@@ -31,8 +30,15 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('移动端点击延迟消除设置'), _t('默认禁止，想加速老旧的移动端浏览器就开启吧'));
+        'disable', _t('移动端点击延迟消除设置'), _t('默认禁止，好多安卓原生浏览器有点击延迟，想开启就开启吧'));
     $form->addInput($fastClickSet);
+
+    $colorBgPosts = new Typecho_Widget_Helper_Form_Element_Radio('colorBgPosts',
+        array('customColor' => _t('启用'),
+            'defaultColor' => _t('禁用'),
+        ),
+        'defaultColor', _t('文章色块设置'), _t('默认禁止，启用则可以通过文章字段控制色块颜色，仅支持blue、purple、green、yellow、red'));
+    $form->addInput($colorBgPosts);
 
     $relatedPosts = new Typecho_Widget_Helper_Form_Element_Radio('relatedPosts',
         array('able' => _t('启用'),
@@ -149,4 +155,9 @@ function getRecentPosts($obj,$pageSize){
         $output = '<li><a href="'.$apost->permalink .'">'. $apost->title .'</a></li>';
         echo $output;
     }
+}
+
+function getRandBgColor($obj){
+    $colors=array('bg-blue','bg-purple','bg-green','bg-yellow','bg-red');
+    return $colors[mt_rand(0,4)];
 }
