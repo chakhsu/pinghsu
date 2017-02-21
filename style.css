@@ -136,7 +136,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .post-list-item-container .item-thumb:hover .item-desc{-webkit-animation:fade-in .5s;animation:fade-in;animation-duration:.5s;opacity:1;}
 .post-list-item-container .item-slant{position:absolute;z-index:0;right:0;bottom:50px;left:0;width:110%;min-height:100px;-webkit-transform:rotate(7deg) translate(-10px,0);-ms-transform:rotate(7deg) translate(-10px,0);transform:rotate(7deg) translate(-10px,0);background-color:#fff;}
 .post-list-item-container .item-slant.reverse-slant{-webkit-transform:rotate(-10deg) translate(10px,-10px);-ms-transform:rotate(-10deg) translate(10px,-10px);transform:rotate(-10deg) translate(10px,-10px);opacity:.7;background-color:#f68e5f;-webkit-box-shadow:none;box-shadow:none;}
-.post-list-item-container .item-label{position:relative;height:130px;padding:20px 20px 40px;background-color:#fff;}
+.post-list-item-container .item-label{position:relative;height:130px;padding:25px 20px 40px;background-color:#fff;}
 .post-list-item-container .item-label .item-title a{font-size:17px;line-height:17px;word-break:break-all;color:#313131;}
 .post-list-item-container .item-label .item-meta{position:absolute;right:0;bottom:0;width:100%;padding:0 15px 15px;text-align:right;}
 .post-list-item-container .item-label .item-meta .item-meta-cat a{font-size:13px;position:relative;float:right;margin-right:10px;padding:10px 0;text-align:right;text-transform:none;color:#5f5f5f;}
