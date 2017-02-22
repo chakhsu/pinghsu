@@ -116,6 +116,14 @@ function showThumb($obj,$size=null,$link=false){
     }
 }
 
+function parseFieldsThumb($obj){
+    $options = Typecho_Widget::widget('Widget_Options');
+    if(!empty($options->src_add) && !empty($options->cdn_add)){
+        $fieldsThumb = str_ireplace($options->src_add,$options->cdn_add,$obj->fields->thumb);
+    }
+    echo trim($fieldsThumb);
+}
+
 function parseContent($obj){
     $options = Typecho_Widget::widget('Widget_Options');
     if(!empty($options->src_add) && !empty($options->cdn_add)){

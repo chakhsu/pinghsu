@@ -19,7 +19,7 @@ $this->need('header.php');
 			<div class="post-list-item">
 				<div class="post-list-item-container">
 					<?php if (array_key_exists('thumb',unserialize($this->___fields()))): ?>
-					<a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php echo $this->fields->thumb;?>);">
+					<a href="<?php $this->permalink() ?>" class="item-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-orange<?php endif; ?><?php endif; ?>" style="background-image:url(<?php parseFieldsThumb($this);?>);">
 						<dir class="item-desc">
 							<?php $this->excerpt(75, '...');?>
 						</dir>
