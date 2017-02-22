@@ -14,7 +14,7 @@
         <p class="post-tags">
             <?php $this->tags(' ', true, ''); ?>
         </p>
-		<?php $this->content(); ?>
+		<?php parseContent($this); ?>
 		<p class="post-info">
 			本文由 <a href="<?php $this->author->permalink(); ?>"><?php $this->author() ?></a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: <?php echo date('M j, Y \\a\t h:i a' , $this->modified); ?>
 		</p>

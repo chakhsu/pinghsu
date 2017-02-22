@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div id="post-content" class="post-content">
-		<?php $this->content(); ?>
+		<?php parseContent($this); ?>
 	</div>
 </article>
 
