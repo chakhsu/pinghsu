@@ -38,7 +38,7 @@ blockquote>:last-child{margin-bottom:0;}
 hr{clear:both;overflow:hidden;height:0;margin:15px 0;padding:0;border:0;border-bottom:2px solid #ddd;background:transparent;}
 table{font-size:13px;display:block;overflow:auto;width:100%;border-spacing:0;border-collapse:collapse;word-wrap:normal;word-break:normal;}
 table th{font-weight:bold;}
-table th,table td{padding:6px 13px;border:1px solid #ddd;}
+table th,table td{padding:6px 13px;white-space:nowrap;border:1px solid #ddd;}
 table tr{border-top:1px solid #ccc;background-color:#fff;}
 table thead tr{background-color:#f7f7f7;}
 button,input,select,textarea{font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;font-size:13px;line-height:1.6;resize:none;}
