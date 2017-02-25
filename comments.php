@@ -12,19 +12,25 @@ function threadedComments($comments, $options) {
     }
 
     $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
+    $depth = $comments->levels +1;
 
     if ($comments->url) {
-        $author = '<a href="' . $comments->url . '" target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
+        $author = '<a href="' . $comments->url . '"target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
     } else {
         $author = $comments->author;
     }
 ?>
 
 <li id="li-<?php $comments->theId(); ?>" class="comment-body<?php
-if ($comments->levels > 0) {
-    echo ' comment-child';
+if ($depth > 1 && $depth < 3) {
+    echo ' comment-child ';
+    $comments->levelsAlt('comment-level-odd', ' comment-level-even');
+}
+else if( $depth > 2){
+    echo ' comment-child2';
     $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-} else {
+}
+else {
     echo ' comment-parent';
 }
 $comments->alt(' comment-odd', ' comment-even');
@@ -40,8 +46,8 @@ $comments->alt(' comment-odd', ' comment-even');
         ?>
         <div class="comment-view" onclick="">
             <div class="comment-header">
-                <img class="avatar" src="<?php echo $avatar ?>" alt="<?php echo $comments->author; ?>" width="<?php echo $size ?>" height="<?php echo $size ?>" />
-                <span class="comment-author<?php echo $commentClass; ?>"><?php $comments->author(); ?></span>
+                <img class="avatar" src="<?php echo $avatar ?>" width="<?php echo $size ?>" height="<?php echo $size ?>" />
+                <span class="comment-author<?php echo $commentClass; ?>"><?php echo $author; ?></span>
             </div>
             <div class="comment-content">
                 <span class="comment-author-at"><?php getCommentAt($comments->coid); ?></span> <?php $comments->content(); ?></p>
