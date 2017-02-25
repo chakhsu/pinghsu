@@ -251,7 +251,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .comment-parent{margin:20px 0;border:1px solid rgba(184,197,214,.2);border-radius:3px;background:#fff;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.04);box-shadow:0 1px 4px rgba(0,0,0,.04);}
 .comment-parent:last-child{margin:20px 0 0;}
 .comment-parent:first-child{margin:0;}
-.comment-child{border-top:1px solid rgba(184,197,214,.2);}
+.comment-child,.comment-child2{border-top:1px solid rgba(184,197,214,.2);}
 .comment-view{padding:20px;cursor:pointer;}
 .comment-header{display:inline-block;width:100%;}
 .comment-header .avatar{display:inline-block;float:left;width:40px;height:40px;border:1px solid #eaeaea;border-radius:50%;}
