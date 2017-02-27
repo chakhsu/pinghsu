@@ -165,3 +165,9 @@ function getRecentPosts($obj,$pageSize){
     }
 }
 
+function randBgIco(){
+    $bgIco=array('book','game','note','chat','code','image','web','link','design','lock');
+    return $bgIco[mt_rand(0,9)];
+}
+
+

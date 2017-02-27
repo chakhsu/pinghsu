@@ -42,6 +42,7 @@
 								<?php elseif (array_key_exists('lock',unserialize($this->___fields()))): ?>
 								<div class="item-meta-ico bg-ico-lock" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
 								<?php else : ?>
+								 <div class="item-meta-ico bg-ico-<?php echo randBgIco(); ?>" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
 	                            <?php endif; ?>
 								<div class="item-meta-date"><?php $this->date('M j, Y'); ?></div>
 							</div>
