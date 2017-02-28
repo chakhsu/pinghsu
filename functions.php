@@ -172,3 +172,8 @@ function randBgIco(){
     return $bgIco[mt_rand(0,9)];
 }
 
+function randBgColor(){
+    $bgColor=array('blue','purple','green','yellow','red','orange');
+    return $bgColor[mt_rand(0,5)];
+}
+
