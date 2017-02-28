@@ -11,7 +11,7 @@ html{overflow-x:hidden;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 body{font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;font-size:14px;line-height:1.8;margin:0 auto;color:#313131;text-rendering:geometricPrecision;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 body>*:first-child{margin-top:0!important;}
 body>*:last-child{margin-bottom:0!important;}
-p,blockquote,ul,ol,dl,table,pre{margin:20px 0;}
+p,blockquote,ul,ol,dl,table,pre{margin:20px 0;vertical-align:baseline;}
 h1,h2,h3,h4,h5,h6{font-weight:normal;-webkit-font-smoothing:antialiased;}
 h1 tt,h1 code,h2 tt,h2 code,h3 tt,h3 code,h4 tt,h4 code,h5 tt,h5 code,h6 tt,h6 code{font-size:inherit;}
 h1{font-size:1.4em;color:#222;}
@@ -60,7 +60,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .browsehappy a{font-weight:700;text-decoration:underline;color:#8a1f11;}
 .bg-white{background-color:#fff!important;}
 .bg-grey{background-color:#f7f7f7!important;}
-.bg-deepgrey{background-color:#8997aa!important;}
+.bg-deepgrey{background-color:rgba(0,0,0,.5)!important;}
 .bg-blue{background-color:#6fa3ef!important;}
 .bg-purple{background-color:#bc99c4!important;}
 .bg-green{background-color:#46c47c!important;}
@@ -130,10 +130,13 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .post-list-item{float:left;width:33.3333%;height:auto;padding:15px;align-items:center;}
 .post-list-item-container{position:relative;overflow:hidden;width:100%;padding:0;border-radius:3px;background-color:#fff;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.04);box-shadow:0 1px 4px rgba(0,0,0,.04);}
 .post-list-item-container:hover{-webkit-box-shadow:2px 2px 4px rgba(0,0,0,.1);box-shadow:2px 2px 4px rgba(0,0,0,.1);}
-.post-list-item-container .item-thumb{position:relative;display:inherit;min-height:250px;background-position:50% 50%;background-size:cover;}
-.post-list-item-container .item-thumb .item-desc{font-size:14px;position:absolute;top:20%;overflow:hidden;height:145px;padding:0 30px;word-break:break-all;opacity:0;color:#fff;}
-.post-list-item-container .item-thumb:hover{background-color:#f68e5f;background-image:none!important;}
-.post-list-item-container .item-thumb:hover .item-desc{-webkit-animation:fade-in .5s;animation:fade-in;animation-duration:.5s;opacity:1;}
+.post-list-item-container .item-thumb{position:relative;display:inherit;min-height:250px;-webkit-transition:-webkit-transform 500ms ease,filter 500ms ease;-moz-transition:-moz-transform 500ms ease,filter 500ms ease;transition:transform 500ms ease,filter 500ms ease;background-position:50% 50%;background-size:cover;}
+.post-list-item-container .item-desc{position:absolute;top:0;overflow:hidden;width:100%;height:100%;padding:40px 28px;}
+.post-list-item-container .item-desc p{font-size:14px;margin:0;padding:0;word-break:break-all;opacity:0;color:#fff;}
+.post-list-item-container .item-thumb:hover{background-color:#f68e5f;-webkit-filter:blur(2px);-moz-filter:blur(2px);filter:blur(2px);}
+.post-list-item-container:hover .item-thumb{-webkit-transform:scale(1.1);-moz-transform:scale(1.1);transform:scale(1.1);-webkit-filter:blur(3px);-moz-filter:blur(3px);filter:blur(3px);}
+.post-list-item-container:hover .item-desc{background-color:rgba(0,0,0,.5);}
+.post-list-item-container:hover .item-desc p{-webkit-animation:fade-in .5s;animation:fade-in;animation-duration:.5s;opacity:1;}
 .post-list-item-container .item-slant{position:absolute;z-index:0;right:0;bottom:50px;left:0;width:110%;min-height:100px;-webkit-transform:rotate(7deg) translate(-10px,0);-ms-transform:rotate(7deg) translate(-10px,0);transform:rotate(7deg) translate(-10px,0);background-color:#fff;}
 .post-list-item-container .item-slant.reverse-slant{-webkit-transform:rotate(-10deg) translate(10px,-10px);-ms-transform:rotate(-10deg) translate(10px,-10px);transform:rotate(-10deg) translate(10px,-10px);opacity:.7;background-color:#f68e5f;-webkit-box-shadow:none;box-shadow:none;}
 .post-list-item-container .item-label{position:relative;height:130px;padding:25px 20px 40px;background-color:#fff;}

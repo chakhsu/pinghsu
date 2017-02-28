@@ -120,8 +120,10 @@ function parseFieldsThumb($obj){
     $options = Typecho_Widget::widget('Widget_Options');
     if(!empty($options->src_add) && !empty($options->cdn_add)){
         $fieldsThumb = str_ireplace($options->src_add,$options->cdn_add,$obj->fields->thumb);
+        echo trim($fieldsThumb);
+    }else{
+        return $obj->fields->thumb();
     }
-    echo trim($fieldsThumb);
 }
 
 function parseContent($obj){
@@ -169,5 +171,4 @@ function randBgIco(){
     $bgIco=array('book','game','note','chat','code','image','web','link','design','lock');
     return $bgIco[mt_rand(0,9)];
 }
-
 
