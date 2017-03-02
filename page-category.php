@@ -26,7 +26,7 @@ $this->need('header.php');
 									<div class="item-label">
 										<div class="item-title"><a href="<?php $catlist->permalink() ?>"><?php $catlist->title() ?></a></div>
 										<div class="item-meta clearfix">
-											<div class="item-meta-date"><?php $catlist->date('M j, Y'); ?></div>
+											<div class="item-meta-date"> <?php $catlist->date('M j, Y'); ?> </div>
 										</div>
 									</div>
 								</div>

@@ -7,7 +7,7 @@
 			<?php $this->title() ?>
 		</h1>
 		<div class="post-data">
-			<time datetime="<?php $this->date('c'); ?>" itemprop="datePublished">Published : <?php $this->date('M j, Y'); ?></time>
+			<time datetime="<?php $this->date('c'); ?>" itemprop="datePublished">Published on <?php $this->date('M j, Y'); ?></time>
 		</div>
 	</div>
 	<div id="post-content" class="post-content">

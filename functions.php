@@ -33,6 +33,13 @@ function themeConfig($form) {
         'disable', _t('移动端点击延迟消除设置'), _t('默认禁止，好多安卓原生浏览器有点击延迟，想开启就开启吧'));
     $form->addInput($fastClickSet);
 
+    $postListSwitch = new Typecho_Widget_Helper_Form_Element_Radio('postListSwitch',
+        array('threeList' => _t('三栏'),
+            'oneList' => _t('单栏'),
+        ),
+        'oneList', _t('首页文章列表设置'), _t('默认单栏，根据自己的喜好去做切换吧'));
+    $form->addInput($postListSwitch);
+
     $colorBgPosts = new Typecho_Widget_Helper_Form_Element_Radio('colorBgPosts',
         array('customColor' => _t('启用'),
             'defaultColor' => _t('禁用'),

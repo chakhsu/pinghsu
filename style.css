@@ -148,6 +148,25 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 .index-page .post-list-item-container .item-label{padding:10px 20px 40px;}
 
 /* ==========================================================================
+   #one list page
+   ========================================================================== */
+.onelist-page{max-width:100%;margin:0;padding:80px 0 0;}
+.post-onelist-item{display:inline-block;width:100%;margin:0;}
+.post-onelist-item:nth-child(n){background:#f7f7f7;}
+.post-onelist-item:nth-child(2n){background:#fff;}
+.post-onelist-item-container{position:relative;max-width:680px;margin:0 auto;padding:70px 20px 65px;}
+.post-onelist-item-container .onelist-item-thumb{position:relative;display:block;min-height:260px;-webkit-transition:-webkit-transform 500ms ease,filter 500ms ease;-moz-transition:-moz-transform 500ms ease,filter 500ms ease;transition:transform 500ms ease,filter 500ms ease;border-radius:5px;background-position:50% 50%;background-size:cover;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.04);box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.post-onelist-item-container .onelist-item-thumb:hover{-webkit-box-shadow:2px 3px 4px rgba(0,0,0,.1);box-shadow:2px 3px 4px rgba(0,0,0,.1);}
+.post-onelist-item-container .item-title{display:block;margin:30px 0 0;text-align:center;}
+.post-onelist-item-container .item-title a{font-size:21px;line-height:17px;color:#313131;}
+.post-onelist-item-container .item-content{padding:0 30px 10px;text-align:center;word-break:break-all;}
+.post-onelist-item-container .item-meta,.post-onelist-item-container .item-readmore{font-size:12px;text-align:center;color:#5f5f5f;}
+.post-onelist-item-container .item-meta a{color:#5f5f5f;}
+.post-onelist-item-container .item-readmore a{padding:8px 20px;color:#5f5f5f;border:1px solid #5f5f5f;border-radius:20px;}
+.post-onelist-item-container .item-readmore a:hover{color:#6fa3ef;border:1px solid #6fa3ef;-webkit-transition: all 0.5s ease;transition: all 0.5s ease;}
+.post-onelist-item-container .item-meta-hr{display:block;width:55px;height:2px;margin:0 auto;margin-top:20px;content:'';}
+
+/* ==========================================================================
    #post page
    ========================================================================== */
 .post-page{max-width:700px;padding:130px 25px 20px;}
@@ -234,6 +253,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    #navigator
    ========================================================================== */
 .lists-navigator{margin:30px 0 35px;}
+.onelist-page .lists-navigator{margin:35px 0 35px;}
 .lists-navigator ol{margin:0;padding:0 10px;list-style:none;text-align:center;}
 .lists-navigator ol li{display:inline-block;color:#5f5f5f;}
 .lists-navigator ol li a{font-size:14px;padding:0 20px;color:#5f5f5f;}
@@ -307,9 +327,9 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .directory-content{display:none;}
 }
 @media(max-width:880px){
-   .index-page{padding:90px 0 0;}
-   .archive-page{padding:90px 0 20px;}
-   .common-page{padding:90px 0 0;}
+   .index-page{padding:80px 0 0;}
+   .archive-page{padding:80px 0 20px;}
+   .common-page{padding:80px 0 0;}
    .post-list-item{width:50%;padding:10px;}
    .post-list-item:nth-child(odd){padding-left:20px;}
    .post-list-item:nth-child(even){padding-right:20px;}
@@ -322,6 +342,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .comment-form .input-control{max-width:100%;}
    .post-page{padding:110px 25px 0;}
    .related-post-lists{padding-top:15px;}
+   .post-onelist-item-container{padding:40px 20px 35px;}
 }
 @media(max-width:650px){
    .navbar-menu{display:none;}
@@ -350,6 +371,9 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .common-page .post-list-item:first-child{padding-top:0;}
    .related-post-lists{padding-top:5px;}
    .main-content{margin:0 auto;}
+   .post-onelist-item-container{padding:20px;}
+   .post-onelist-item-container .item-content{display:none;}
+   .post-onelist-item-container .item-readmore{display:none;}
 }
 @media(max-width:410px){
    .meta-copyright-info .info-logo{display:none;}
