@@ -326,9 +326,10 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .directory-content{display:none;}
 }
 @media(max-width:880px){
-   .index-page{padding:80px 0 0;}
-   .archive-page{padding:80px 0 20px;}
-   .common-page{padding:80px 0 0;}
+   .index-page{padding:90px 0 0;}
+   .archive-page{padding:90px 0 20px;}
+   .common-page{padding:90px 0 0;}
+   .post-onelist-item-container{padding:50px 20px 55px;}
    .post-list-item{width:50%;padding:10px;}
    .post-list-item:nth-child(odd){padding-left:20px;}
    .post-list-item:nth-child(even){padding-right:20px;}
@@ -341,7 +342,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .comment-form .input-control{max-width:100%;}
    .post-page{padding:110px 25px 0;}
    .related-post-lists{padding-top:15px;}
-   .post-onelist-item-container{padding:40px 20px 35px;}
+   .post-onelist-item-container{padding:20px 20px 25px;}
    .post-onelist-item-container .onelist-item-thumb{min-height:240px;}
 }
 @media(max-width:650px){
