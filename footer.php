@@ -244,7 +244,9 @@ addCommentInputValue();
 <?php if($this->is('post')): ?>
 var postDirectory = new Headroom(document.getElementById("directory-content"), {
     tolerance: 0,
-    offset : 280,
+    <?php if ($this->options->postshowthumb == 'able'): ?>
+    offset : 280,<?php else: ?>
+    offset : 100,<?php endif; ?>
     classes: {
         initial: "initial",
         pinned: "pinned",
