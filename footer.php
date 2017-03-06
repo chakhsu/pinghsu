@@ -31,11 +31,11 @@
                         <?php $this->options->title() ?>
                         <?php endif; ?>
                     </a>
-					<div class="info-text">
-                    	<p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="_blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
-						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
-						<p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
-					</div>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="_blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+                        <p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
+                        <p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
+                    </div>
 				</div>
 			</div>
 			<div class="meta-item meta-posts">
