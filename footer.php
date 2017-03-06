@@ -263,6 +263,9 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
+<?php if ($this->options->pjaxSet == 'disable'): ?>
+hljs.initHighlightingOnLoad();
+<?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
