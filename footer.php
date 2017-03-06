@@ -42,16 +42,17 @@
 				<h3 class="meta-title">RECENT POSTS</h3>
                 <?php getRecentPosts($this,8); ?>
 			</div>
-			<div class="meta-item meta-comments">
-				<h3 class="meta-title">RECENT COMMENTS</h3>
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">RECENT COMMENTS</h3>
                 <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
                 <?php while($comments->next()): ?>
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(25, '...'); ?></a></li>
                 <?php endwhile; ?>
-			</div>
+            </div>
 		</div>
 	</div>
 </footer>
+
 <?php if ($this->options->tableOfContents == 'able'): ?>
 <?php if($this->is('post')): ?>
 <div id="directory-content" class="directory-content">
@@ -243,7 +244,7 @@ addCommentInputValue();
 <?php if($this->is('post')): ?>
 var postDirectory = new Headroom(document.getElementById("directory-content"), {
     tolerance: 0,
-    offset : 100,
+    offset : 280,
     classes: {
         initial: "initial",
         pinned: "pinned",

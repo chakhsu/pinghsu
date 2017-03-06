@@ -47,6 +47,13 @@ function themeConfig($form) {
         'defaultColor', _t('文章色块设置'), _t('默认禁止，启用则可以通过文章字段控制色块颜色，仅支持blue、purple、green、yellow、red'));
     $form->addInput($colorBgPosts);
 
+    $postshowthumb = new Typecho_Widget_Helper_Form_Element_Radio('postshowthumb',
+        array('able' => _t('启用'),
+            'disable' => _t('禁用'),
+        ),
+        'disable', _t('文章题图设置'), _t('默认禁止，启用则在文章页内显示缩略图'));
+    $form->addInput($postshowthumb);
+
     $relatedPosts = new Typecho_Widget_Helper_Form_Element_Radio('relatedPosts',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
