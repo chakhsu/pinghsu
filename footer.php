@@ -21,9 +21,9 @@
 		</div>
 	</div>
 	<div class="footer-meta">
-		<div class="footer-container">
-			<div class="meta-item meta-copyright">
-				<div class="meta-copyright-info">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
                     <a href="<?php $this->options->siteUrl(); ?>" class="info-logo">
                         <?php if($this->options->footerLogoUrl): ?>
                         <img src="<?php $this->options->footerLogoUrl();?>" alt="<?php $this->options->title() ?>" />
@@ -36,12 +36,12 @@
                         <p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
                         <p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
                     </div>
-				</div>
-			</div>
-			<div class="meta-item meta-posts">
-				<h3 class="meta-title">RECENT POSTS</h3>
+                </div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">RECENT POSTS</h3>
                 <?php getRecentPosts($this,8); ?>
-			</div>
+            </div>
             <div class="meta-item meta-comments">
                 <h3 class="meta-title">RECENT COMMENTS</h3>
                 <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
