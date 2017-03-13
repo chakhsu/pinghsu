@@ -5,17 +5,17 @@
 		<div class="footer-container clearfix">
 			<div class="social-list">
 			<?php if ($this->options->socialweibo): ?>
-				<a class="social weibo" target="blank" href="<?php $this->options->socialweibo(); ?>">WEIBO</a>
+				<a class="social weibo" target="blank" href="<?php $this->options->socialweibo(); ?>">微博</a>
 			<?php endif; ?>
             <?php if ($this->options->socialzhihu): ?>
-                <a class="social zhihu" target="blank" href="<?php $this->options->socialzhihu(); ?>">ZHIHU</a>
+                <a class="social zhihu" target="blank" href="<?php $this->options->socialzhihu(); ?>">知乎</a>
             <?php endif; ?>
-                <a class="social rss" target="blank" href="<?php $this->options->siteUrl(); ?>feed/">RSS</a>
+                <a class="social rss" target="blank" href="<?php $this->options->siteUrl(); ?>feed/">订阅</a>
 			<?php if ($this->options->socialgithub): ?>
-				<a class="social github" target="blank" href="<?php $this->options->socialgithub(); ?>">GITHUB</a>
+				<a class="social github" target="blank" href="<?php $this->options->socialgithub(); ?>">Github</a>
 			<?php endif; ?>
 			<?php if ($this->options->socialtwitter): ?>
-				<a class="social twitter" target="blank" href="<?php $this->options->socialtwitter(); ?>">TWITTER</a>
+				<a class="social twitter" target="blank" href="<?php $this->options->socialtwitter(); ?>">Twitter</a>
 			<?php endif; ?>
 			</div>
 		</div>
@@ -39,11 +39,11 @@
                 </div>
             </div>
             <div class="meta-item meta-posts">
-                <h3 class="meta-title">RECENT POSTS</h3>
+                <h3 class="meta-title">最近更新</h3>
                 <?php getRecentPosts($this,8); ?>
             </div>
             <div class="meta-item meta-comments">
-                <h3 class="meta-title">RECENT COMMENTS</h3>
+                <h3 class="meta-title">最新评论</h3>
                 <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
                 <?php while($comments->next()): ?>
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(25, '...'); ?></a></li>
