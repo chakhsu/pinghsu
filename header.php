@@ -57,7 +57,7 @@
             <span class="icon-search"></span>
             <form id="search" method="post" action="/" role="search">
                 <span class="search-box">
-                    <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+                    <input type="text" id="input" class="input" name="s" required="true" placeholder="搜索本站..." maxlength="30" autocomplete="off">
                 </span>
             </form>
         </div>

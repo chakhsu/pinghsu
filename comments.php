@@ -73,19 +73,19 @@ $comments->alt(' comment-odd', ' comment-even');
         <span class="response">Responses<?php if($this->user->hasLogin()): ?> / You are <a href="<?php $this->options->profileUrl(); ?>" data-no-instant><?php $this->user->screenName(); ?></a> here, do you want to <a href="<?php $this->options->logoutUrl(); ?>" title="Logout" data-no-instant>logout</a> ?<?php endif; ?> <?php $comments->cancelReply(' / Cancel Reply'); ?></span>
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" class="comment-form" role="form" onsubmit ="getElementById('misubmit').disabled=true;return true;">
             <?php if(!$this->user->hasLogin()): ?>
-            <input type="text" name="author" maxlength="12" id="author" class="form-control input-control clearfix" placeholder="Name (*)" value="" required>
-            <input type="email" name="mail" id="mail" class="form-control input-control clearfix" placeholder="Email (*)" value="" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
-            <input type="url" name="url" id="url" class="form-control input-control clearfix" placeholder="Site (http://)" value="" <?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
+            <input type="text" name="author" maxlength="12" id="author" class="form-control input-control clearfix" placeholder="称呼 (*)" value="" required>
+            <input type="email" name="mail" id="mail" class="form-control input-control clearfix" placeholder="邮箱 (*)" value="" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
+            <input type="url" name="url" id="url" class="form-control input-control clearfix" placeholder="网站 (http://)" value="" <?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
             <?php endif; ?>
 
-            <textarea name="text" id="textarea" class="form-control" placeholder="Your comment here. Be cool. " required ><?php $this->remember('text',false); ?></textarea>
+            <textarea name="text" id="textarea" class="form-control" placeholder="请在此键入评论内容" required ><?php $this->remember('text',false); ?></textarea>
 
-            <button type="submit" class="submit" id="misubmit">SUBMIT</button>
+            <button type="submit" class="submit" id="misubmit">提交</button>
             <?php $security = $this->widget('Widget_Security'); ?>
             <input type="hidden" name="_" value="<?php echo $security->getToken($this->request->getReferer())?>">
         </form>
         <?php else : ?>
-            <span class="response">Comments are closed.</span>
+            <span class="response">评论被关闭</span>
         <?php endif; ?>
 
         <?php if ($comments->have()): ?>

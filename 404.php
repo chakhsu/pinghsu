@@ -9,7 +9,7 @@
 		<meta http-equiv="Cache-Control" content="no-siteapp"/>
 		<link rel="shortcut icon" href="<?php if($this->options->favicon): $this->options->favicon(); else: $this->options->themeUrl('images/favicon.png');endif; ?>">
 		<link rel="apple-touch-icon" href="<?php if($this->options->iosicon): $this->options->iosicon(); else: $this->options->themeUrl('images/apple-touch-icon.png');endif; ?>">
-        <title>Nothing here - <?php $this->options->title() ?></title>
+        <title>这里什么也没有 - <?php $this->options->title() ?></title>
         <style>
         body{
             margin:0;padding:0;
@@ -128,8 +128,8 @@
                 </header>
                 <section>
                     <div class="title404">
-                        <p>I have no secret of success but hard work.</p>
-                    </div><a href="<?php $this->options->siteUrl(); ?>" class="index404">Back Home</a>
+                        <p>失败是成功之母，共勉。</p>
+                    </div><a href="<?php $this->options->siteUrl(); ?>" class="index404">返回主页</a>
                 </section>
                 <footer id="footer404">© <?php echo date('Y'); ?> <?php $this->options->title(); ?></footer>
             </div>
