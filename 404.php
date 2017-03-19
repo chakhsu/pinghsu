@@ -13,7 +13,7 @@
         <style>
         body{
             margin:0;padding:0;
-            font-family: Helvetica,Arial,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei","tohoma,sans-serif";
+            font-family: PingFang SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
         }
         a, button.submit {
             color:#6E7173;
@@ -32,7 +32,6 @@
             width: 100%;
             background:#fff;
             background-size: auto 100%;
-            text-shadow:1px 1px 0 #fff;
         }
         .body-about .body404{
             background:#fff;
@@ -41,8 +40,14 @@
             margin: 0 auto;
             text-align: center;
             letter-spacing: 2px;
-            font: normal 150px/1 “Helvetica Neue”, Helvetica, Arial;
-            color:#444;
+            font-size: 150px;
+            line-height: 1;
+            font-weight: 100;
+            color: #f35626;
+            background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-animation: hue 60s infinite linear;
         }
         .site-name404 h1{
             margin: 0 0 10px;
@@ -53,14 +58,11 @@
             font-size: 15px;
             width: 2px;
         }
-        .site-name404 i {
-            font-style: normal;
-        }
         .title404 p{
             font-size: 20px;
             line-height:1.5;
             margin:0;
-            color:#444;
+            color:#7b8993;
         }
         .info404{
             position: absolute;
@@ -81,7 +83,6 @@
             display: inline-block;
             white-space: nowrap;
             cursor: pointer;
-            background: #444;
             letter-spacing: 1px;
             font-size: 14px;
             -moz-user-select: -moz-none;
@@ -90,21 +91,14 @@
             -o-user-select: none;
             user-select: none;
             text-shadow: none;
-            border: 1px solid #ccc;
+            border: 2px solid #7b8993;
             line-height: 36px;
             text-align: center;
             height: 36px;
             padding: 0 25px;
             border-radius: 25px;
-            -webkit-transition-duration: 400ms;
-            transition-duration: 400ms;
             background-color: #fff;
-            color: #999;
-        }
-        .index404:hover{
-            color: #6fa3ef;
-            border-color: #6fa3ef;
-            outline-style: none;
+            color: #7b8993;
         }
         .icon-about{
             padding: 10px 0 25px;
@@ -117,21 +111,28 @@
             border-radius: 100%;
             padding: 6px;
         }
+        @-webkit-keyframes hue {
+          from {
+            -webkit-filter: hue-rotate(0deg);
+          }
+
+          to {
+            -webkit-filter: hue-rotate(-360deg);
+          }
+        }
         </style>
     </head>
     <body>
         <div class="body404">
             <div class="info404">
                 <header id="header404" class="clearfix">
-                    <div class="site-name404"><i>404</i>
-                    </div>
+                    <div class="site-name404">404</div>
                 </header>
                 <section>
                     <div class="title404">
                         <p>I have no secret of success but hard work.</p>
                     </div><a href="<?php $this->options->siteUrl(); ?>" class="index404">Back Home</a>
                 </section>
-                <footer id="footer404">© <?php echo date('Y'); ?> <?php $this->options->title(); ?></footer>
             </div>
         </div>
     </body>
