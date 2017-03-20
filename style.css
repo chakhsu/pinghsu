@@ -40,6 +40,7 @@ table{font-size:13px;display:block;overflow:auto;width:100%;border-spacing:0;bor
 table th{font-weight:bold;}
 table th,table td{padding:6px 13px;white-space:nowrap;border:1px solid #ddd;}
 table tr{border-top:1px solid #ccc;background-color:#fff;}
+table tr:hover{background-color:#f7f7f7;}
 table thead tr{background-color:#f7f7f7;}
 button,input,select,textarea{font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;font-size:13px;line-height:1.6;resize:none;}
 input:required:invalid,input:focus:invalid,textarea:required:invalid,textarea:focus:invalid{box-shadow:none;}
