@@ -172,7 +172,8 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 /* ==========================================================================
    #post page
    ========================================================================== */
-.post-header-thumb{width100%;height:300px;background-position:center;background-size:cover;margin-top:80px;position:relative;}
+.post-header-thumb{width100%;height:300px;margin-top:80px;position:relative;}
+.post-header-thumb-op{width100%;height:300px;width:100%;position:absolute;background-position:center;background-size:cover;-webkit-filter:blur(4px);-moz-filter:blur(4px);filter:blur(4px);}
 .post-header-thumb-cover{width100%;height:300px;margin-top:80px;position:relative;background-color:rgba(0,0,0,.5);-webkit-box-shadow:0 1px 5px rgba(0,0,0,.3);-moz-box-shadow:0 1px 5px rgba(0,0,0,.3);box-shadow:0 1px 5px rgba(0,0,0,.3);}
 .post-header-thumb-container{max-width:700px;position:relative;top:100px;margin:0 auto;padding:30px 25px 20px;-webkit-animation:fade-in .5s;animation:fade-in;animation-duration:.5s;}
 .post-header-thumb-title{color:#fff;font-size:21px;font-weight:500;}
@@ -338,6 +339,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .directory-content{display:none;}
    .post-header-thumb{height:280px;}
    .post-header-thumb-cover{height:280px;}
+   .post-header-thumb-op{height:280px;}
    .post-header-thumb-container{top:80px;}
 }
 @media(max-width:880px){
@@ -350,6 +352,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
    .post-list-item:nth-child(even){padding-right:20px;}
    .lists-navigator{margin:25px 0 30px;}
    .post-header-thumb{height:250px;}
+   .post-header-thumb-op{height:250px;}
    .post-header-thumb-cover{height:250px;}
    .post-header-thumb-container{top:60px;}
    .footer-meta .footer-container{padding:0;}
@@ -359,6 +362,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#5f5f5f;}
 @media(max-width:700px){
    .comment-form .input-control{max-width:100%;}
    .post-header-thumb{height:220px;}
+   .post-header-thumb-op{height:220px;}
    .post-header-thumb-cover{height:220px;}
    .post-header-thumb-container{top:40px;}
    .post-page{padding:30px 25px 0;}
