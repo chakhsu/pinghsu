@@ -4,7 +4,7 @@
  *
  * @package Pinghsu Theme
  * @author Chakhsu Lau
- * @version 1.4.2
+ * @version 1.4.5
  * @link https://www.linpx.com/
  */
 
