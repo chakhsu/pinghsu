@@ -232,7 +232,7 @@ addCommentInputValue();
 <?php $this->footer(); ?>
 <script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
 <?php if ($this->options->useHighline == 'able'): ?>
-<script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
 <script src="//cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js"></script>
