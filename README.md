@@ -14,7 +14,7 @@ https://github.com/chakhsu/pinghsu
 
 https://www.linpx.com
 
-### 主题亮点
+## 主题亮点
 
  - 页面预加载与DNS预解析保证极快访问速度
  - 无JQuery，无前端框架，轻量级
@@ -28,7 +28,7 @@ https://www.linpx.com
  - 主题设置添加XSS检测，评论提交防止触发多次
  - 还有更多亮点等你去发现~
 
-### 更多预览
+## 更多预览
 
 |首页 - 三栏|首页 - 单栏|
 |:------|:------|
@@ -51,19 +51,19 @@ https://www.linpx.com
 |:------|:------|:------|
 |![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyesvc4wij20af0ijagh.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyetejn5sj20af0ijta2.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyetxmwe1j20af0ijdgj.jpg)|
 
-### 主题使用
+## 主题使用
 
 **注意事项**：目前主题仅在 typecho 开发版，PHP7.0 下测试通过，其他情况
 
 主题使用分为主题启用，主题外观设置，页面设置，文章缩略图、个性化标徽
 
-### 主题启用
+## 主题启用
 
 到 Github 下载，点击"Download ZIP"下载，解压后将文件夹改名为`pinghsu`后上传到 `/usr/themes`，并启用主题。
 
 如果需要更新主题，则先下载最新文件，然后覆盖原文件即可完成更新，部分新增加的功能需要到后台开启才会生效
 
-### 外观设置
+## 外观设置
 
 外观设置主要分为四部分，分别为 logo、icon 的设置，功能开关，社交按钮设置，图片CDN镜像
 
@@ -100,17 +100,17 @@ https://www.linpx.com
 
 https://www.linpx.com/p/more-detailed-pinghsu-theme-set-tutorial.html
 
-### 浏览器兼容情况
+## 浏览器兼容情况
 
 这个····现代浏览器都兼容····
 
-### Contributing 贡献
+## Contributing 贡献
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。
 
-### License 许可证
+## License 许可证
 
 Open sourced under the MIT license.
 
