@@ -72,7 +72,7 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('代码高亮设置'), _t('默认禁止，启用则会对 ``` 进行代码高亮，支持20种编程语言的高亮'));
+        'disable', _t('代码高亮设置'), _t('默认禁止，启用则会对 ``` 进行代码高亮，支持22种编程语言的高亮'));
     $form->addInput($useHighline);
 
     $useMathjax = new Typecho_Widget_Helper_Form_Element_Radio('useMathjax',
