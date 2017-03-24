@@ -96,9 +96,7 @@ https://www.linpx.com
 
 所以你可以直接在`<ul>`内联一个`class="flinks"`,然后在`<li>`插入你的友链，即可
 
-更多设置教程看 : here
-
-https://www.linpx.com/p/more-detailed-pinghsu-theme-set-tutorial.html
+更多设置教程 : [Here](https://www.linpx.com/p/more-detailed-pinghsu-theme-set-tutorial.html)
 
 ## 浏览器兼容情况
 
