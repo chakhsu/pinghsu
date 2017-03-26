@@ -74,6 +74,10 @@ https://www.linpx.com
  - CDN设置部分仅仅测试了七牛的，理论上也支持有镜像服务的CDN
  - 创建模板归档页，无论选择了哪个模板都要加上自定义字段`archive`
 
+**独立搜索页**
+
+设置方法看这里：[Here](https://www.linpx.com/p/add-a-separate-search-page-to-the-pinghsu-theme.html)
+
 **文章缩略图**
 
 文章设置缩略图方法有四种，自定义字段`thumb`，文章附件第一张图片，文章内图片，默认缩略图
