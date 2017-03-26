@@ -21,10 +21,10 @@
     'author'    =>  _t(' %s '),
     'date'      =>  _t(' %s ')
     ), '', ' - '); ?><?php $this->options->title(); ?></title>
-    <meta name="keywords" content="<?php $this->keywords() ?>" />
+    <meta name="keywords" content="<?php $this->keywords(); ?>" />
     <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
     <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
-    <link href="<?php $this->options->themeUrl('style.min.css?lpisme'); ?>" rel="stylesheet">
+    <link href="<?php $this->options->themeUrl('style.min.css?lpismine'); ?>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -53,14 +53,20 @@
             <?php endwhile; ?>
 
         </div>
+        <?php if($this->options->searchPage): ?>
+        <a href="<?php $this->options->searchPage(); ?>" class="navbar-search">
+            <span class="icon-search"></span>
+        </a>
+        <?php else: ?>
         <div class="navbar-search" onclick="">
             <span class="icon-search"></span>
-            <form id="search" method="post" action="/" role="search">
+            <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
                 <span class="search-box">
                     <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
                 </span>
             </form>
         </div>
+        <?php endif;?>
         <div class="navbar-mobile-menu" onclick="">
             <span class="icon-menu cross"><span class="middle"></span></span>
             <ul>

@@ -46,6 +46,10 @@ https://www.linpx.com
 |:------|:------|
 |![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyes1yb7fj211w0udwhp.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyesdiqxjj211w0ud0vw.jpg)|
 
+|搜索页|404|
+|:------|:------|
+|![](https://ws1.sinaimg.cn/large/7c98397dgy1fe0flbno1bj223s1oq15m.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fe0flvltizj223s1oq79a.jpg)|
+
 
 |移动端 - 首页|移动端 - 文章页|移动端 - 分类页|
 |:------|:------|:------|
