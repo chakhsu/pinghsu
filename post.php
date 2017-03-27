@@ -80,9 +80,9 @@
 	<div class="sharer-inner">
 		<div class="sharer-items social-share left">
 			<span class="sharer-item">Share : </span>
-			<span class="sharer-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($this->permalink()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">facebook</a></span>
-			<span class="sharer-item"><a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($this->permalink()); ?>&text=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Twitter</a></span>
-			<span class="sharer-item"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<?php echo urlencode($this->permalink()); ?>" target="_blank" rel="nofollow">QRcode</a></span>
+			<span class="sharer-item sharer-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($this->permalink()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">facebook</a></span>
+			<span class="sharer-item sharer-twitter"><a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($this->permalink()); ?>&text=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Twitter</a></span>
+			<span class="sharer-item sharer-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<?php echo urlencode($this->permalink()); ?>" target="_blank" rel="nofollow">QRcode</a></span>
 		</div>
 		<div class="sharer-items right">
 			<span class="sharer-item"><?php thePrev($this); ?></span>
