@@ -94,6 +94,14 @@ https://www.linpx.com
 
 `book` 、 `game` 、 `note` 、 `chat` 、 `code` 、 `image` 、 `web` 、 `link` 、 `design` 、 `lock`
 
+**个性化色块**
+
+个性化色块需要到外观设置那开启才能激活使用，色块出现的地方有首页，分类页，标签页，独立搜索页等等
+
+设置方法是在文章编辑内填写自定义字段，支持的字段如下
+
+`blue`、`purple`、`green`、`yellow`、`red`
+
 **友情链接**
 
 如果你想获取跟我一样的友情链接页面，因为是 typecho 开发版，支持在页面内写`<ul><li>`
