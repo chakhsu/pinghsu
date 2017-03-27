@@ -231,7 +231,7 @@ addCommentInputValue();
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/instantclick.min.js?v20140319'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/instantclick.js?v20140319'); ?>"></script>
 <?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
@@ -273,7 +273,7 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
-<?php if (($this->options->pjaxSet == 'disable') && ($this->is('post'))): ?>
+<?php if (($this->options->pjaxSet == 'disable') && ($this->options->useHighline == 'able') && ($this->is('post'))): ?>
 hljs.initHighlightingOnLoad();
 <?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
@@ -335,3 +335,4 @@ InstantClick.init();
 <?php endif; ?>
 </body>
 </html>
+<?php if ($this->options->htmlCompress == 'able'): $html_source = ob_get_contents(); ob_clean(); print compress_html($html_source); ob_end_flush(); endif; ?>
