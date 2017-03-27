@@ -314,7 +314,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 <?php if ($this->options->pjaxSet == 'able'): ?>
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad){
-    <?php if (($this->options->useHighline == 'able') && ($this->is('post'))): ?>
+    <?php if ($this->options->useHighline == 'able'): ?>
     var blocks = document.querySelectorAll('pre code');
     for (var i = 0; i < blocks.length; i++) {
         hljs.highlightBlock(blocks[i]);
