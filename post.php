@@ -76,19 +76,19 @@
 	</div>
 </article>
 
-<div id="post-sharer" class="post-sharer">
-	<div class="sharer-inner">
-		<div class="sharer-items social-share left">
-			<span class="sharer-item">Share : </span>
-			<span class="sharer-item sharer-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($this->permalink()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">facebook</a></span>
-			<span class="sharer-item sharer-twitter"><a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($this->permalink()); ?>&text=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Twitter</a></span>
-			<span class="sharer-item sharer-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<?php echo urlencode($this->permalink()); ?>" target="_blank" rel="nofollow">QRcode</a></span>
+<div id="post-bottom-bar" class="post-bottom-bar">
+	<div class="bottom-bar-inner">
+		<div class="bottom-bar-items social-share left">
+			<span class="bottom-bar-item">Share : </span>
+			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/bottom-bar/bottom-bar.php?u=<?php echo urlencode($this->permalink()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">facebook</a></span>
+			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($this->permalink()); ?>&text=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<?php echo urlencode($this->permalink()); ?>" target="_blank" rel="nofollow">QRcode</a></span>
 		</div>
-		<div class="sharer-items right">
-			<span class="sharer-item"><?php thePrev($this); ?></span>
-			<span class="sharer-item"><?php theNext($this); ?></span>
-			<span class="sharer-item"><a href="#footer">↓</a></span>
-			<span class="sharer-item"><a href="#">↑</a></span>
+		<div class="bottom-bar-items right">
+			<span class="bottom-bar-item"><?php thePrev($this); ?></span>
+			<span class="bottom-bar-item"><?php theNext($this); ?></span>
+			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
+			<span class="bottom-bar-item"><a href="#">↑</a></span>
 		</div>
 	</div>
 </div>

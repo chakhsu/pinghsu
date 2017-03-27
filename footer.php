@@ -252,7 +252,7 @@ var postDirectory = new Headroom(document.getElementById("directory-content"), {
 postDirectory.init();
 <?php endif; ?>
 <?php if($this->is('post')): ?>
-var postSharer = new Headroom(document.getElementById("post-sharer"), {
+var postSharer = new Headroom(document.getElementById("post-bottom-bar"), {
     tolerance: 0,
     offset : 70,
     classes: {
