@@ -85,8 +85,8 @@
 			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<?php echo urlencode($this->permalink()); ?>" target="_blank" rel="nofollow">QRcode</a></span>
 		</div>
 		<div class="bottom-bar-items right">
-			<span class="bottom-bar-item"><?php thePrev($this); ?></span>
 			<span class="bottom-bar-item"><?php theNext($this); ?></span>
+			<span class="bottom-bar-item"><?php thePrev($this); ?></span>
 			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
 			<span class="bottom-bar-item"><a href="#">↑</a></span>
 		</div>
