@@ -231,7 +231,7 @@ addCommentInputValue();
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/instantclick.js?v20140319'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/instantclick.min.js?v20140319'); ?>"></script>
 <?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
