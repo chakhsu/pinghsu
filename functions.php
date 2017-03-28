@@ -113,6 +113,13 @@ function themeConfig($form) {
     $form->addInput($default_thumb->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
 }
 
+function themeInit($archive){
+    Helper::options()->commentsMaxNestingLevels = 999;
+    if ($archive->is('archive')) {
+        $archive->parameter->pageSize = 12;
+    }
+}
+
 function showThumb($obj,$size=null,$link=false){
     preg_match_all( "/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches );
     $thumb = '';
