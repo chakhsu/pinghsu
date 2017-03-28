@@ -335,4 +335,4 @@ InstantClick.init('mousedown');
 <?php endif; ?>
 </body>
 </html>
-<?php if ($this->options->htmlCompress == 'able'): $html_source = ob_get_contents(); ob_clean(); print compress_html($html_source); ob_end_flush(); endif; ?>
+<?php if ($this->options->htmlCompress == 'able'): $html_source = ob_get_contents(); ob_clean(); print compressHtml($html_source); ob_end_flush(); endif; ?>

@@ -81,7 +81,7 @@ function themeConfig($form) {
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('代码高亮设置'), _t('默认禁止，启用则会对 ``` 进行代码高亮，支持20种编程语言的高亮'));
+        'disable', _t('代码高亮设置'), _t('默认禁止，启用则会对 ``` 进行代码高亮，支持22种编程语言的高亮'));
     $form->addInput($useHighline);
 
     $useMathjax = new Typecho_Widget_Helper_Form_Element_Radio('useMathjax',
@@ -239,7 +239,7 @@ function thePrev($widget, $default = NULL){
     }
 }
 
-function compress_html($html_source) {
+function compressHtml($html_source) {
     $chunks = preg_split('/(<!--<nocompress>-->.*?<!--<\/nocompress>-->|<nocompress>.*?<\/nocompress>|<pre.*?\/pre>|<textarea.*?\/textarea>|<script.*?\/script>)/msi', $html_source, -1, PREG_SPLIT_DELIM_CAPTURE);
     $compress = '';
     foreach ($chunks as $c) {
@@ -286,4 +286,8 @@ function compress_html($html_source) {
         $compress .= $c;
     }
     return $compress;
+}
+
+function seoSetting($obj){
+
 }
