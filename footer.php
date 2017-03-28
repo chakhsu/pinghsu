@@ -330,7 +330,7 @@ InstantClick.on('change', function(isInitialLoad){
     <?php endif; ?>
     }
 });
-InstantClick.init();
+InstantClick.init('mousedown');
 </script>
 <?php endif; ?>
 </body>
