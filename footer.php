@@ -284,7 +284,7 @@ if ('addEventListener' in document) {
 }
 <?php endif; ?>
 </script>
-<?php if (($this->options->useMathjax == 'able') && ($this->is('post'))): ?>
+<?php if ($this->options->useMathjax == 'able'): ?>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     showProcessingMessages: false,
@@ -325,7 +325,7 @@ InstantClick.on('change', function(isInitialLoad){
     <?php if($this->options->GoogleAnalytics): ?>
         if (typeof ga !== 'undefined') ga('send', 'pageview', location.pathname + location.search);
     <?php endif; ?>
-    <?php if(($this->options->useMathjax == 'able') && ($this->is('post'))): ?>
+    <?php if($this->options->useMathjax == 'able'): ?>
         if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
     <?php endif; ?>
     }
