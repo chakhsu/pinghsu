@@ -145,7 +145,7 @@ var postDirectoryBuild = function() {
     };
     createPostDirectory(document.getElementById('post-content'),document.getElementById('directory'), true);
 };
-setTimeout(postDirectoryBuild(),0);
+postDirectoryBuild();
 </script>
 <?php endif; ?>
 <?php if(($this->is('single')) && ($this->allow('comment'))): ?>
