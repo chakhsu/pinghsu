@@ -40,9 +40,10 @@ $comments->alt(' comment-odd', ' comment-even');
             $host = 'https://secure.gravatar.com';
             $url = '/avatar/';
             $size = '80';
+            $default = 'mm';
             $rating = Helper::options()->commentsAvatarRating;
             $hash = md5(strtolower($comments->mail));
-            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=';
+            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=' . $default;
         ?>
         <div class="comment-view" onclick="">
             <div class="comment-header">
