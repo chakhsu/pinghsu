@@ -10,9 +10,11 @@ function themeConfig($form) {
     $form->addInput($favicon->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
     $iosicon = new Typecho_Widget_Helper_Form_Element_Text('iosicon', NULL, NULL, _t('apple touch icon地址'), _t('一般为http://www.yourblog.com/image.png,支持 https:// 或 //,留空则不设置Apple Touch Icon'));
     $form->addInput($iosicon->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-
     $searchPage = new Typecho_Widget_Helper_Form_Element_Text('searchPage', NULL, NULL, _t('搜索页地址'), _t('输入你的 Template Page of Search 的页面地址,记得带上 http:// 或 https://'));
     $form->addInput($searchPage->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+    $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('ICP备案号'), _t('一般为苏ICP备17054599号-1,留空则不设置ICP备案号'));
+    $form->addInput($beian->addRule('xssCheck', _t('请不要在ICP备案号中使用特殊字符')));
+
 
     $pjaxSet = new Typecho_Widget_Helper_Form_Element_Radio('pjaxSet',
         array('able' => _t('启用'),
