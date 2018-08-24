@@ -67,7 +67,7 @@
             </form>
         </div>
         <?php endif;?>
-        <div class="navbar-mobile-menu" onclick="">
+        <div class="navbar-mobile-menu" id="navbar-mobile-swith" onclick="">
             <span class="icon-menu cross"><span class="middle"></span></span>
             <ul>
                 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>

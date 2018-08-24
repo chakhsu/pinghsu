@@ -276,6 +276,10 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
+var navbarMobileSwith = document.getElementById("navbar-mobile-swith");
+navbarMobileSwith.onclick = function() {
+    navbarMobileSwith.classList.toggle("navbar-mobile-menu-on");
+};
 <?php if (($this->options->pjaxSet == 'disable') && ($this->options->useHighline == 'able') && ($this->is('post'))): ?>
 hljs.initHighlightingOnLoad();
 <?php endif; ?>
