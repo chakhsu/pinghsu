@@ -47,7 +47,7 @@
 			</div>
             <div class="meta-item meta-comments">
                 <h3 class="meta-title">RECENT COMMENTS</h3>
-                <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
+                <?php $this->widget('Widget_Comments_Recent','pageSize=8&ignoreAuthor=true')->to($comments); ?>
                 <?php while($comments->next()): ?>
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(25, '...'); ?></a></li>
                 <?php endwhile; ?>
