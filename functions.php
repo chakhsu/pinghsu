@@ -164,6 +164,7 @@ function parseContent($obj){
         $obj->content = str_ireplace($options->src_add,$options->cdn_add,$obj->content);
     }
     $obj->content = preg_replace("/<a href=\"([^\"]*)\">/i", "<a href=\"\\1\" target=\"_blank\">", $obj->content);
+    $obj->content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?(?:[\.jpg|\.jpeg|\.png|\.gif|\.bmp]))[\'|\"].*?[\/]?>/", '<a href="${1}"><img src="${1}"></a>', $obj->content);
     echo trim($obj->content);
 }
 
