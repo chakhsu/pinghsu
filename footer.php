@@ -229,6 +229,7 @@ addCommentInputValue();
 </script>
 <?php endif; ?>
 <?php $this->footer(); ?>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
 <?php if ($this->options->useHighline == 'able'): ?>
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
@@ -239,7 +240,16 @@ addCommentInputValue();
 <?php if ($this->options->fastClickSet == 'able'): ?>
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
 <?php endif; ?>
+<?php if ($this->options->lightBox == 'able'): ?>
+<script src="//cdn.bootcss.com/lightgallery/1.6.11/js/lightgallery.min.js"></script>
+<?php endif; ?>
 <script>
+<?php if ($this->options->lightBox == 'able'): ?>
+    lightGallery(document.getElementById('post-content'));
+<?php endif; ?>
+
+
+
 <?php if (($this->options->tableOfContents == 'able') && ($this->is('post'))): ?>
 var postDirectory = new Headroom(document.getElementById("directory-content"), {
     tolerance: 0,

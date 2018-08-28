@@ -24,7 +24,8 @@
     <meta name="keywords" content="<?php $this->keywords(); ?>" />
     <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
     <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
-    <link href="<?php $this->options->themeUrl('style.min.css?20170331'); ?>" rel="stylesheet">
+    <link href="<?php $this->options->themeUrl('style.min.css?20170331'); ?>" rel="stylesheet"><?php if ($this->options->lightBox == 'able') : ?>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/lightgallery/1.6.11/css/lightgallery.min.css"><?php endif; ?>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>

@@ -15,6 +15,12 @@ function themeConfig($form) {
     $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('ICP备案号'), _t('一般为苏ICP备17054599号-1,留空则不设置ICP备案号'));
     $form->addInput($beian->addRule('xssCheck', _t('请不要在ICP备案号中使用特殊字符')));
 
+    $lightBox = new Typecho_Widget_Helper_Form_Element_Radio('lightBox',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('图片点击放大设置'), _t('默认禁止，启用则会对内容页的图片开启点击放大功能'));
+    $form->addInput($lightBox);
 
     $pjaxSet = new Typecho_Widget_Helper_Form_Element_Radio('pjaxSet',
         array('able' => _t('启用'),
