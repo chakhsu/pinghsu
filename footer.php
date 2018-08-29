@@ -245,7 +245,7 @@ addCommentInputValue();
 <script>
 <?php if ($this->options->lightBox == 'able'): ?>
     lightGallery(document.getElementById('post-content'), {
-        selector: '.test'
+        selector: '.img-src'
     });
 <?php endif; ?>
 <?php if (($this->options->tableOfContents == 'able') && ($this->is('post'))): ?>
