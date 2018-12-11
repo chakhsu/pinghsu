@@ -240,7 +240,7 @@ addCommentInputValue();
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->lightBox == 'able'): ?>
-<script src="<?php $this->options->themeUrl('lightgallery/js/lightgallery.min.js'); ?>"></script>
+<script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.2/dist/js/lightgallery.min.js"></script>
 <?php endif; ?>
 <script>
 <?php if ($this->options->lightBox == 'able'): ?>
