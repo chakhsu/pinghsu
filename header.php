@@ -24,7 +24,8 @@
     <meta name="keywords" content="<?php $this->keywords(); ?>" />
     <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
     <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
-    <link href="<?php $this->options->themeUrl('style.min.css?20170331'); ?>" rel="stylesheet">
+    <link href="<?php $this->options->themeUrl('style.min.css?20170331'); ?>" rel="stylesheet"><?php if ($this->options->lightBox == 'able') : ?>
+    <link href="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.2/dist/css/lightgallery.min.css" rel="stylesheet"><?php endif; ?>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -67,7 +68,7 @@
             </form>
         </div>
         <?php endif;?>
-        <div class="navbar-mobile-menu" onclick="">
+        <div class="navbar-mobile-menu" id="navbar-mobile-swith" onclick="">
             <span class="icon-menu cross"><span class="middle"></span></span>
             <ul>
                 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>

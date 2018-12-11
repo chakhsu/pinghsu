@@ -34,6 +34,9 @@
 					<div class="info-text">
                     	<p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="_blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
 						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
+                        <?php if($this->options->beian): ?>
+                        <p><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow"><?php $this->options->beian(); ?></a></p>
+                        <?php endif; ?>
 						<p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
 					</div>
 				</div>
@@ -44,7 +47,7 @@
 			</div>
             <div class="meta-item meta-comments">
                 <h3 class="meta-title">RECENT COMMENTS</h3>
-                <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
+                <?php $this->widget('Widget_Comments_Recent','pageSize=8&ignoreAuthor=true')->to($comments); ?>
                 <?php while($comments->next()): ?>
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(25, '...'); ?></a></li>
                 <?php endwhile; ?>
@@ -236,7 +239,15 @@ addCommentInputValue();
 <?php if ($this->options->fastClickSet == 'able'): ?>
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
 <?php endif; ?>
+<?php if ($this->options->lightBox == 'able'): ?>
+<script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.2/dist/js/lightgallery.min.js"></script>
+<?php endif; ?>
 <script>
+<?php if ($this->options->lightBox == 'able'): ?>
+    lightGallery(document.getElementById('post-content'), {
+        selector: '.img-src'
+    });
+<?php endif; ?>
 <?php if (($this->options->tableOfContents == 'able') && ($this->is('post'))): ?>
 var postDirectory = new Headroom(document.getElementById("directory-content"), {
     tolerance: 0,
@@ -273,6 +284,10 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
+var navbarMobileSwith = document.getElementById("navbar-mobile-swith");
+navbarMobileSwith.onclick = function() {
+    navbarMobileSwith.classList.toggle("navbar-mobile-menu-on");
+};
 <?php if (($this->options->pjaxSet == 'disable') && ($this->options->useHighline == 'able') && ($this->is('post'))): ?>
 hljs.initHighlightingOnLoad();
 <?php endif; ?>
