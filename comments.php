@@ -76,7 +76,7 @@ $comments->alt(' comment-odd', ' comment-even');
             <?php if(!$this->user->hasLogin()): ?>
             <input type="text" name="author" maxlength="12" id="author" class="form-control input-control clearfix" placeholder="Name (*)" value="" required>
             <input type="email" name="mail" id="mail" class="form-control input-control clearfix" placeholder="Email (*)" value="" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
-            <input type="url" name="url" id="url" class="form-control input-control clearfix" placeholder="Site (http://)" value="" <?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
+            <input type="url" name="url" id="url" class="form-control input-control clearfix" placeholder="Site (https://)" value="" <?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
             <?php endif; ?>
 
             <textarea name="text" id="textarea" class="form-control" placeholder="Your comment here. Be cool. " required ><?php $this->remember('text',false); ?></textarea>
