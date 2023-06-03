@@ -33,28 +33,27 @@ https://www.linpx.com
 
 |首页 - 三栏|首页 - 单栏|
 |:------|:------|
-|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyeg1l1gsj211w0udnjj.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyegxxy5sj211w0ud7j2.jpg)|
+|![首页-三栏.png][2]|![首页-单栏.png][3]|
 
 |文章内容页 - 题图|文章内容页 - 目录|
 |:------|:------|
-|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyejnfc0fj211w0ud14o.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyekevycsj211w0ud44f.jpg)|
+|![文章内容页-题图.png][4]|![文章内容页-目录.png][5]|
 
 |页面内容页|内容页 - 评论|
 |:------|:------|
-|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyerb4zyjj211w0udn0p.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyern8mfjj211w0ud772.jpg)|
+|![页面内容页.png][6]|![内容页-评论.png][7]|
 
 |分类页|模板归档页|
 |:------|:------|
-|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyes1yb7fj211w0udwhp.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyesdiqxjj211w0ud0vw.jpg)|
+|![分类页.png][8]|![模版归档页.png][9]|
 
 |搜索页|404|
 |:------|:------|
-|![](https://ws1.sinaimg.cn/large/7c98397dgy1fe0flbno1bj223s1oq15m.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fe0flvltizj223s1oq79a.jpg)|
-
+|![搜索页.png][10]|![404页.png][11]|
 
 |移动端 - 首页|移动端 - 文章页|移动端 - 分类页|
 |:------|:------|:------|
-|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyesvc4wij20af0ijagh.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyetejn5sj20af0ijta2.jpg)|![](https://ws1.sinaimg.cn/large/7c98397dgy1fdyetxmwe1j20af0ijdgj.jpg)|
+|![移动端-首页.png][12]|![移动端-内容页.png][13]|![移动端-分类页.png][14]|
 
 ## 主题使用
 
