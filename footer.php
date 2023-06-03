@@ -1,29 +1,29 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer id="footer" class="footer <?php if (array_key_exists('archive',unserialize($this->___fields()))): ?>bg-white<?php elseif($this->is('archive')&&($this->options->colorBgPosts == 'defaultColor')): ?>bg-white<?php elseif($this->is('archive')&&($this->options->colorBgPosts == 'customColor')): ?>bg-grey<?php elseif($this->is('single')): ?>bg-white<?php endif; ?>">
-	<div class="footer-social">
-		<div class="footer-container clearfix">
-			<div class="social-list">
-			<?php if ($this->options->socialweibo): ?>
-				<a class="social weibo" target="blank" href="<?php $this->options->socialweibo(); ?>">WEIBO</a>
-			<?php endif; ?>
+    <div class="footer-social">
+        <div class="footer-container clearfix">
+            <div class="social-list">
+            <?php if ($this->options->socialweibo): ?>
+                <a class="social weibo" target="blank" href="<?php $this->options->socialweibo(); ?>">WEIBO</a>
+            <?php endif; ?>
             <?php if ($this->options->socialzhihu): ?>
                 <a class="social zhihu" target="blank" href="<?php $this->options->socialzhihu(); ?>">ZHIHU</a>
             <?php endif; ?>
                 <a class="social rss" target="blank" href="<?php $this->options->siteUrl(); ?>feed/">RSS</a>
-			<?php if ($this->options->socialgithub): ?>
-				<a class="social github" target="blank" href="<?php $this->options->socialgithub(); ?>">GITHUB</a>
-			<?php endif; ?>
-			<?php if ($this->options->socialtwitter): ?>
-				<a class="social twitter" target="blank" href="<?php $this->options->socialtwitter(); ?>">TWITTER</a>
-			<?php endif; ?>
-			</div>
-		</div>
-	</div>
-	<div class="footer-meta">
-		<div class="footer-container">
-			<div class="meta-item meta-copyright">
-				<div class="meta-copyright-info">
+            <?php if ($this->options->socialgithub): ?>
+                <a class="social github" target="blank" href="<?php $this->options->socialgithub(); ?>">GITHUB</a>
+            <?php endif; ?>
+            <?php if ($this->options->socialtwitter): ?>
+                <a class="social twitter" target="blank" href="<?php $this->options->socialtwitter(); ?>">TWITTER</a>
+            <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <div class="footer-meta">
+        <div class="footer-container">
+            <div class="meta-item meta-copyright">
+                <div class="meta-copyright-info">
                     <a href="<?php $this->options->siteUrl(); ?>" class="info-logo">
                         <?php if($this->options->footerLogoUrl): ?>
                         <img src="<?php $this->options->footerLogoUrl();?>" alt="<?php $this->options->title() ?>" />
@@ -31,26 +31,24 @@
                         <?php $this->options->title() ?>
                         <?php endif; ?>
                     </a>
-					<div class="info-text">
-                    	<p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="_blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
-						<p>Powered by <a href="http://www.typecho.org" target="_blank" rel="nofollow">Typecho</a></p>
-						<p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
-					</div>
-				</div>
-			</div>
-			<div class="meta-item meta-posts">
-				<h3 class="meta-title">RECENT POSTS</h3>
-                <?php getRecentPosts($this,8); ?>
-			</div>
-            <div class="meta-item meta-comments">
-                <h3 class="meta-title">RECENT COMMENTS</h3>
-                <?php $this->widget('Widget_Comments_Recent','pageSize=8')->to($comments); ?>
-                <?php while($comments->next()): ?>
-                <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(25, '...'); ?></a></li>
-                <?php endwhile; ?>
+                    <div class="info-text">
+                        <p>Theme is <a href="https://github.com/chakhsu/pinghsu" target="blank">Pinghsu</a> by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+                        <?php if ($this->options->ICPRecordNumber): ?>
+                        <p><a href="https://beian.miit.gov.cn/" target="blank" ><?php $this->options->ICPRecordNumber(); ?></a></p>
+                        <?php endif; ?>
+                        <p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a></p>
+                    </div>
+                </div>
             </div>
-		</div>
-	</div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">RECENT POSTS</h3>
+                <?php getRecentPosts($this,8); ?>
+            </div>
+            <div class="meta-item meta-tags">
+                <h3 class="meta-title">HOT TAGS</h3>
+                <?php getHotTags($this,20); ?>
+        </div>
+    </div>
 </footer>
 
 <?php if (($this->options->tableOfContents == 'able') && ($this->is('post'))): ?>
@@ -307,9 +305,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <?php endif; ?>
 <?php if($this->options->GoogleAnalytics): ?>
-<script>
 <?php $this->options->GoogleAnalytics(); ?>
-</script>
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
 <script data-no-instant>

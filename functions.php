@@ -49,6 +49,13 @@ function themeConfig($form) {
         'oneList', _t('首页文章列表设置'), _t('默认单栏，根据自己的喜好去做切换吧'));
     $form->addInput($postListSwitch);
 
+    $categoryNav = new Typecho_Widget_Helper_Form_Element_Radio('categoryNav',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('导航菜单是否启动分类'), _t('默认禁止，启用后导航菜单会展示分类'));
+    $form->addInput($categoryNav);
+
     $colorBgPosts = new Typecho_Widget_Helper_Form_Element_Radio('colorBgPosts',
         array('customColor' => _t('启用'),
             'defaultColor' => _t('禁用'),
@@ -91,7 +98,7 @@ function themeConfig($form) {
         'disable', _t('文章Mathjax设置'), _t('默认禁止，启用则会对内容页进行数学公式渲染，仅支持 $公式$ 和 $$公式$$ '));
     $form->addInput($useMathjax);
 
-    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('Google Analytics代码'), _t('填写你从Google Analytics获取到的Universal Analytics跟踪代码，不需要script标签'));
+    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('Google Analytics代码'), _t('填写你从Google Analytics获取到的Universal Analytics跟踪代码，需要script标签'));
     $form->addInput($GoogleAnalytics);
 
 
@@ -111,6 +118,9 @@ function themeConfig($form) {
     $form->addInput($cdnAddress->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
     $default_thumb = new Typecho_Widget_Helper_Form_Element_Text('default_thumb', NULL, '', _t('默认缩略图'),_t('文章没有图片时的默认缩略图，留空则无，一般为http://www.yourblog.com/image.png'));
     $form->addInput($default_thumb->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
+
+    $ICPRecordNumber = new Typecho_Widget_Helper_Form_Element_Text('ICPRecordNumber', NULL, '', _t('ICP备案号'),_t('ICP备案号，一般为你备案申请审批通过后返回的认证序列号，也就是ICP备案号，一般为粤XXXXXXX'));
+    $form->addInput($ICPRecordNumber->addRule('xssCheck', _t('请不要在链接中使用特殊字符')));
 }
 
 function themeInit($archive){
@@ -193,7 +203,21 @@ function getRecentPosts($obj,$pageSize){
     foreach($rows as $row){
         $cid = $row['cid'];
         $apost = $obj->widget('Widget_Archive@post_'.$cid, 'type=post', 'cid='.$cid);
-        $output = '<li><a href="'.$apost->permalink .'">'. $apost->title .'</a></li>';
+        $output = '<li><a href="'.$apost->permalink.'">'.$apost->title.'</a></li>';
+        echo $output;
+    }
+}
+
+function getHotTags($obj, $limit){
+    $db = Typecho_Db::get();
+    $tags = $db->fetchAll($db->select()
+        ->from('table.metas')
+        ->where('type = ?', 'tag')
+        ->order('count', Typecho_Db::SORT_DESC)
+        ->limit($limit));
+    foreach($tags as $tag){
+        $tag = $obj->filter($tag);
+        $output = '<li><a href="'.$tag['permalink'].'"># '.$tag['name'].'</a></li>';
         echo $output;
     }
 }
@@ -220,7 +244,7 @@ function theNext($widget, $default = NULL){
     $content = $db->fetchRow($sql);
     if ($content) {
         $content = $widget->filter($content);
-        $link = '<a href="' . $content['permalink'] . '" title="' . $content['title'] . '">←</a>';
+        $link = '<a href="'.$content['permalink'].'" title="'.$content['title'].'">←</a>';
         echo $link;
     } else {
         echo $default;
@@ -239,7 +263,7 @@ function thePrev($widget, $default = NULL){
     $content = $db->fetchRow($sql);
     if ($content) {
         $content = $widget->filter($content);
-        $link = '<a href="' . $content['permalink'] . '" title="' . $content['title'] . '">→</a>';
+        $link = '<a href="'.$content['permalink'].'" title="'.$content['title'].'">→</a>';
         echo $link;
     } else {
         echo $default;
@@ -293,8 +317,4 @@ function compressHtml($html_source) {
         $compress .= $c;
     }
     return $compress;
-}
-
-function seoSetting($obj){
-
 }

@@ -9,14 +9,14 @@ $this->need('header.php');
 ?>
 
 <div class="main-content archive-page clearfix">
-	<?php $this->widget('Widget_Metas_Category_List')->to($categorys);?>
-    <?php if ($categorys->have()): ?>
-        <?php while($categorys->next()): ?>
-            <div class="categorys-item">
-                <div class="categorys-title">
-                    <a href="<?php $categorys->permalink();?>"><?php $categorys->name();?></a><span> ：<?php $categorys->count();?></span>
+	<?php $this->widget('Widget_Metas_Category_List')->to($categories);?>
+    <?php if ($categories->have()): ?>
+        <?php while($categories->next()): ?>
+            <div class="categories-item">
+                <div class="categories-title">
+                    <a href="<?php $categories->permalink();?>"><?php $categories->name();?></a><span> ：<?php $categories->count();?></span>
                 </div>
-                <?php $catlist =$this->widget('Widget_Archive@categorys_'.$categorys->mid, 'pageSize=10000&type=category', 'mid='.$categorys->mid); ?>
+                <?php $catlist =$this->widget('Widget_Archive@categories_'.$categories->mid, 'pageSize=10000&type=category', 'mid='.$categories->mid); ?>
                 <?php if($catlist->have()): ?>
             		<div class="post-lists">
 						<div class="post-lists-body">
