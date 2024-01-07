@@ -4,7 +4,7 @@
  *
  * @package Pinghsu Theme
  * @author Chakhsu Lau
- * @version 1.6.0
+ * @version 1.6.1
  * @link https://www.linpx.com/
  */
 
@@ -39,6 +39,7 @@ $this->need('header.php');
 					<div class="item-label">
 						<div class="item-title"><a href="<?php $this->permalink(); ?>"><?php $this->title(); ?></a></div>
 						<div class="item-meta clearfix">
+							<div class="item-meta-date"><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('M j, Y'); ?></time></div>
 							<?php if (array_key_exists('book',unserialize($this->___fields()))): ?>
 							<div class="item-meta-ico bg-ico-book" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
 							<?php elseif (array_key_exists('game',unserialize($this->___fields()))): ?>

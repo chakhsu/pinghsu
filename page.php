@@ -3,9 +3,9 @@
 
 <article class="main-content page-page">
 	<div class="post-header">
-		<h1 class="post-title" itemprop="name headline">
+		<div class="post-title" itemprop="name headline">
 			<?php $this->title() ?>
-		</h1>
+		</div>
 		<div class="post-data">
 			<time datetime="<?php $this->date('c'); ?>" itemprop="datePublished">Published on <?php $this->date('M j, Y'); ?></time>
 		</div>

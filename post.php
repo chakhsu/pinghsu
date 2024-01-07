@@ -58,9 +58,9 @@
 
 <article class="main-content <?php if ($this->options->postshowthumb == 'able'): ?>post-page<?php else: ?>page-page<?php endif; ?>" itemscope itemtype="http://schema.org/Article">
 	<div class="post-header">
-		<h1 class="post-title" itemprop="name headline">
+		<div class="post-title" itemprop="name headline">
 			<?php $this->title() ?>
-		</h1>
+		</div>
 		<div class="post-data">
 			<time datetime="<?php $this->date('c'); ?>" itemprop="datePublished">Published on <?php $this->date('M j, Y'); ?></time> in <?php $this->category(''); ?> with <a href="#comments"><?php $this->commentsNum(_t(' 0 comment'), _t(' 1 comment'), _t(' %d comments')); ?></a>
 		</div>
