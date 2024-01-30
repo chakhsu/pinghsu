@@ -56,20 +56,6 @@
     <nav class="toc js-toc"></nav>
 </div>
 <script src="//cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.js"></script>
-<script>
-function addTocId() {
-    var id = 1;
-    var entryContent = document.querySelector('.post-content');
-    var headings = entryContent.querySelectorAll('h1, h2, h3, h4, h5');
-
-    headings.forEach(function(heading) {
-        var hyphenated = 'anchor-' + id;
-        heading.setAttribute('id', hyphenated);
-        id++;
-    });
-}
-addTocId();
-</script>
 <?php endif; ?>
 <?php if(($this->is('single')) && ($this->allow('comment'))): ?>
 <script>
@@ -154,7 +140,7 @@ addCommentInputValue();
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
-<script src="<?php $this->options->themeUrl('js/instantclick.min.js?v20140319'); ?>"></script>
+<script src="//cdn.bootcdn.net/ajax/libs/instantclick/3.1.0/instantclick.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
