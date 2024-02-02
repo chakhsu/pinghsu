@@ -55,7 +55,7 @@
 <div id="directory-content" class="directory-content">
     <nav class="toc js-toc"></nav>
 </div>
-<script src="//cdn.bootcdn.net/ajax/libs/tocbot/4.21.0/tocbot.min.js"></script>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.18.2/tocbot.min.js"></script>
 <?php endif; ?>
 <?php if(($this->is('single')) && ($this->allow('comment'))): ?>
 <script>
@@ -120,10 +120,11 @@
 <?php if(!$this->user->hasLogin()): ?>
 function getCommentCookie(name){
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg))
+    if (arr=document.cookie.match(reg)) {
         return unescape(decodeURI(arr[2]));
-    else
+    } else {
         return null;
+    }
 }
 function addCommentInputValue(){
     document.getElementById('author').value = getCommentCookie('<?php echo md5($this->request->getUrlPrefix()); ?>__typecho_remember_author');
@@ -135,15 +136,15 @@ addCommentInputValue();
 </script>
 <?php endif; ?>
 <?php $this->footer(); ?>
-<script src="//cdn.bootcss.com/headroom/0.9.1/headroom.min.js"></script>
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/headroom/0.12.0/headroom.min.js"></script>
 <?php if ($this->options->useHighline == 'able'): ?>
-<script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->pjaxSet == 'able'): ?>
-<script src="//cdn.bootcdn.net/ajax/libs/instantclick/3.1.0/instantclick.min.js"></script>
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.1.0/instantclick.min.js"></script>
 <?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
-<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/fastclick/1.0.6/fastclick.min.js"></script>
 <?php endif; ?>
 <script>
 <?php if (($this->options->tableOfContents == 'able') && ($this->is('post'))): ?>
@@ -193,7 +194,7 @@ var header = new Headroom(document.getElementById("header"), {
 });
 header.init();
 <?php if (($this->options->pjaxSet == 'disable') && ($this->options->useHighline == 'able') && ($this->is('post'))): ?>
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
 <?php endif; ?>
 <?php if ($this->options->fastClickSet == 'able'): ?>
 if ('addEventListener' in document) {
