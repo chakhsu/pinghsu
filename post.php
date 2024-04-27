@@ -1,8 +1,8 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-<?php if ($this->options->postshowthumb == 'able'): if (array_key_exists('thumb',unserialize($this->___fields()))): ?>
-<div class="post-header-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-<?php echo randBgColor(); ?><?php endif; ?><?php endif; ?>" style="background-image:url(<?php parseFieldsThumb($this);?>);">
+<?php if ($this->options->postshowthumb == 'able'): if (isset($this->___fields()['thumb'])): ?>
+<div class="post-header-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (isset($this->___fields()['green'])): ?> bg-green<?php elseif (isset($this->___fields()['red'])): ?> bg-red<?php elseif (isset($this->___fields()['yellow'])): ?> bg-yellow<?php elseif (isset($this->___fields()['blue'])): ?> bg-blue<?php elseif (isset($this->___fields()['purple'])): ?> bg-purple<?php else : ?> bg-<?php echo randBgColor(); ?><?php endif; ?><?php endif; ?>" style="background-image:url(<?php parseFieldsThumb($this);?>);">
 	<div class="post-header-thumb-op" style="background-image:url(<?php parseFieldsThumb($this);?>);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
@@ -21,7 +21,7 @@
 <?php else : ?>
 <?php $thumb = showThumb($this,null,true);?>
 <?php if(!empty($thumb)):?>
-<div class="post-header-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-<?php echo randBgColor(); ?><?php endif; ?><?php endif; ?>">
+<div class="post-header-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (isset($this->___fields()['green'])): ?> bg-green<?php elseif (isset($this->___fields()['red'])): ?> bg-red<?php elseif (isset($this->___fields()['yellow'])): ?> bg-yellow<?php elseif (isset($this->___fields()['blue'])): ?> bg-blue<?php elseif (isset($this->___fields()['purple'])): ?> bg-purple<?php else : ?> bg-<?php echo randBgColor(); ?><?php endif; ?><?php endif; ?>">
 	<div class="post-header-thumb-op" style="background-image:url(<?php echo $thumb;?>);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
@@ -38,7 +38,7 @@
 	</div>
 </div>
 <?php else : ?>
-<div class="post-header-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (array_key_exists('green',unserialize($this->___fields()))): ?> bg-green<?php elseif (array_key_exists('red',unserialize($this->___fields()))): ?> bg-red<?php elseif (array_key_exists('yellow',unserialize($this->___fields()))): ?> bg-yellow<?php elseif (array_key_exists('blue',unserialize($this->___fields()))): ?> bg-blue<?php elseif (array_key_exists('purple',unserialize($this->___fields()))): ?> bg-purple<?php else : ?> bg-<?php echo randBgColor(); ?><?php endif; ?><?php endif; ?>">
+<div class="post-header-thumb <?php if ($this->options->colorBgPosts == 'defaultColor'): ?> bg-deepgrey<?php elseif ($this->options->colorBgPosts == 'customColor'): ?><?php if (isset($this->___fields()['green'])): ?> bg-green<?php elseif (isset($this->___fields()['red'])): ?> bg-red<?php elseif (isset($this->___fields()['yellow'])): ?> bg-yellow<?php elseif (isset($this->___fields()['blue'])): ?> bg-blue<?php elseif (isset($this->___fields()['purple'])): ?> bg-purple<?php else : ?> bg-<?php echo randBgColor(); ?><?php endif; ?><?php endif; ?>">
 	<div class="post-header-thumb-op" style="background-image:url(<?php $this->options->themeUrl('images/thumbs/'.mt_rand(0,9).'.jpg'); ?>);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
@@ -81,7 +81,7 @@
 		<div class="bottom-bar-items social-share left">
 			<span class="bottom-bar-item">Share : </span>
 			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($this->permalink()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Facebook</a></span>
-			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($this->permalink()); ?>&text=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-x"><a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($this->permalink()); ?>&text=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">X</a></span>
 			<span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=<?php echo urlencode($this->permalink()); ?>&amp;title=<?php echo urlencode($this->title()); ?>" target="_blank" title="<?php $this->title() ?>" rel="nofollow">Weibo</a></span>
 			<span class="bottom-bar-item bottom-bar-qrcode"><a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=<?php echo urlencode($this->permalink()); ?>" target="_blank" rel="nofollow">QR code</a></span>
 		</div>
@@ -106,25 +106,25 @@
 					<div class="item-label">
 						<div class="item-title"><a href="<?php $relatedPosts->permalink() ?>"><?php $relatedPosts->title() ?></a></div>
 						<div class="item-meta clearfix">
-							<?php if (array_key_exists('book',unserialize($relatedPosts->___fields()))): ?>
+							<?php if (array_key_exists('book',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-book" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('game',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('game',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-game" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('note',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('note',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-note" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('chat',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('chat',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-chat" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('code',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('code',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-code" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('image',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('image',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-image" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('web',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('web',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-web" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('link',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('link',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-link" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('design',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('design',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-design" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
-							<?php elseif (array_key_exists('lock',unserialize($relatedPosts->___fields()))): ?>
+							<?php elseif (array_key_exists('lock',$relatedPosts->___fields())): ?>
 							<div class="item-meta-ico bg-ico-lock" style="background: url(<?php $relatedPosts->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
 							<?php else : ?>
 							<div class="item-meta-ico bg-ico-<?php echo randBgIco(); ?>" style="background: url(<?php $this->options->themeUrl('images/bg-ico.png'); ?>) no-repeat;background-size: 40px auto;"></div>
