@@ -36,27 +36,27 @@ https://www.linpx.com
 
 |Homepage - Three Columns|Homepage - Single Column|
 |:------|:------|
-|![Homepage - Three Columns.png](./doc/Homepage - Three Columns.png)|![Homepage - Single Column.png](./doc/Homepage - Single Column.png)|
+|![Homepage - Three Columns](./doc/首页-三栏.png)|![Homepage - Single Column](./doc/首页-单栏.png)|
 
 |Article Content Page - Banner|Article Content Page - Table of Contents|
 |:------|:------|
-|![Article Content Page - Banner.png](./doc/Article Content Page - Banner.png)|![Article Content Page - Table of Contents.png](./doc/Article Content Page - Table of Contents.png)|
+|![Article Content Page - Banner](./doc/文章内容页-题图.png)|![Article Content Page - Table of Contents](./doc/文章内容页-目录.png)|
 
 |Page Content Page|Content Page - Comments|
 |:------|:------|
-|![Page Content Page.png](./doc/Page Content Page.png)|![Content Page - Comments.png](./doc/Content Page - Comments.png)|
+|![Page Content Page](./doc/页面内容页.png)|![Content Page - Comments](./doc/内容页-评论.png)|
 
 |Category Page|Template Archive Page|
 |:------|:------|
-|![Category Page.png](./doc/Category Page.png)|![Template Archive Page.png](./doc/Template Archive Page.png)|
+|![Category Page](./doc/分类页.png)|![Template Archive Page](./doc/模版归档页.png)|
 
 |Search Page|404|
 |:------|:------|
-|![Search Page.png](./doc/Search Page.png)|![404 Page.png](./doc/404 Page.png)|
+|![Search Page](./doc/搜索页.png)|![404 Page](./doc/404页.png)|
 
 |Mobile - Homepage|Mobile - Article Page|Mobile - Category Page|
 |:------|:------|:------|
-|![Mobile - Homepage.png](./doc/Mobile - Homepage.png)|![Mobile - Article Page.png](./doc/Mobile - Article Page.png)|![Mobile - Category Page.png](./doc/Mobile - Category Page.png)|
+|![Mobile - Homepage](./doc/移动端-首页.png)|![Mobile - Article Page](./doc/移动端-内容页.png)|![Mobile - Category Page](./doc/移动端-分类页.png)|
 
 ## Theme Usage
 
