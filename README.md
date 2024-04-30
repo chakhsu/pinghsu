@@ -1,7 +1,6 @@
 ## Pinghsu Theme
 
 [English](README_en.md)
-[繁體中文](README_zh_TW.md)
 
 ![](./doc/pinghsu-theme-preview.jpg)
 
