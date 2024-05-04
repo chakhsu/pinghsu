@@ -1,5 +1,7 @@
 ## Pinghsu Theme
 
+[English](README_en.md)
+
 ![](./doc/pinghsu-theme-preview.jpg)
 
 **主题介绍**
